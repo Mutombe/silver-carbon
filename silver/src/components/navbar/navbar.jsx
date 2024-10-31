@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ExternalLink, Telescope } from "lucide-react";
 import { SearchDialog } from "../search/search";
+import { ContactModal } from "../contact/contact";
 
 const NavLink = ({ to, children, isMobile = false }) => {
   const location = useLocation();
@@ -57,13 +58,13 @@ const Logo = () => (
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-    const [isScrolled, setIsScrolled] = useState(false);
-    const [isSearchOpen, setIsSearchOpen] = useState(false);
-    const location = useLocation();
-    
-    useEffect(() => {
-        document.body.style.backgroundColor = '#111827';
-      }, []);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    document.body.style.backgroundColor = "#111827";
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -81,7 +82,6 @@ const Navbar = () => {
   return (
     <>
       <motion.nav
-
         className={`fixed w-full z-50 transition-all duration-300 ${
           isScrolled
             ? "bg-gradient-to-r from-green-500/5 via-blue-500/5 to-green-500/5 backdrop-blur-lg shadow-lg border-b border-green-500/10"
@@ -101,18 +101,21 @@ const Navbar = () => {
                 <NavLink to="/services">Services</NavLink>
                 <NavLink to="/projects">Projects</NavLink>
                 <NavLink to="/contact">Contact</NavLink>
-                          </div>
-                          <div className="relative">
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={() => setIsSearchOpen(!isSearchOpen)}
-                    className="px-4 py-2 text-white hover:text-green-400 transition-colors"
-                  >
-                    <Telescope className="w-5 h-5" />
-                  </motion.button>
-                  <SearchDialog isOpen={isSearchOpen} setIsOpen={setIsSearchOpen} />
-                </div>
+              </div>
+              <div className="relative">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => setIsSearchOpen(!isSearchOpen)}
+                  className="px-4 py-2 text-white hover:text-green-400 transition-colors"
+                >
+                  <Telescope className="w-5 h-5" />
+                </motion.button>
+                <SearchDialog
+                  isOpen={isSearchOpen}
+                  setIsOpen={setIsSearchOpen}
+                />
+              </div>
 
               <motion.button
                 whileHover={{ scale: 1.05 }}
@@ -121,7 +124,7 @@ const Navbar = () => {
                   text-white rounded-full text-sm font-medium hover:from-green-400 
                   hover:to-green-500 transition-all shadow-lg flex items-center gap-2"
               >
-                Get Started
+                <ContactModal />
                 <ExternalLink className="w-4 h-4" />
               </motion.button>
             </div>
@@ -151,12 +154,22 @@ const Navbar = () => {
               className="md:hidden bg-gradient-to-b from-gray-900 to-green-900 border-t border-green-500/10"
             >
               <div className="px-4 py-4 space-y-1">
-                <NavLink to="/" isMobile>Home</NavLink>
-                <NavLink to="/about" isMobile>About</NavLink>
-                <NavLink to="/services" isMobile>Services</NavLink>
-                <NavLink to="/projects" isMobile>Projects</NavLink>
-                              <NavLink to="/contact" isMobile>Contact</NavLink>
-                              <div className="relative">
+                <NavLink to="/" isMobile>
+                  Home
+                </NavLink>
+                <NavLink to="/about" isMobile>
+                  About
+                </NavLink>
+                <NavLink to="/services" isMobile>
+                  Services
+                </NavLink>
+                <NavLink to="/projects" isMobile>
+                  Projects
+                </NavLink>
+                <NavLink to="/contact" isMobile>
+                  Contact
+                </NavLink>
+                <div className="relative">
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
@@ -165,7 +178,10 @@ const Navbar = () => {
                   >
                     <Telescope className="w-5 h-5" />
                   </motion.button>
-                  <SearchDialog isOpen={isSearchOpen} setIsOpen={setIsSearchOpen} />
+                  <SearchDialog
+                    isOpen={isSearchOpen}
+                    setIsOpen={setIsSearchOpen}
+                  />
                 </div>
 
                 <motion.button
@@ -176,7 +192,7 @@ const Navbar = () => {
                     hover:to-green-500 transition-all shadow-lg flex items-center 
                     justify-center gap-2"
                 >
-                  Get Started
+                  <ContactModal />
                   <ExternalLink className="w-5 h-5" />
                 </motion.button>
               </div>

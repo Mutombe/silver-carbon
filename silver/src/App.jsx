@@ -9,6 +9,7 @@ import Navbar from './components/navbar/navbar';
 import Footer from './components/footer/footer';
 import { Partnership, Team, Sustainability } from './components/about/about';
 import { AssetDevelopment, CarbonFinance, CarbonCreditsOfftake } from './components/services/services';
+import { Toaster } from 'sonner';
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
         <Route path="/team" element={<Team />} />
       </Routes>
       <Footer />
+      <Toaster />
     </Router>
   );
 };

@@ -1,6 +1,20 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin } from 'lucide-react';
+import { useState } from 'react';
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { ExternalLink, Send, Loader2 } from "lucide-react";
+import { toast } from 'sonner';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 const Contact = () => {
   return (
@@ -90,3 +104,136 @@ const Contact = () => {
 };
 
 export default Contact;
+
+export const ContactModal = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    // Simulate API call
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    // Here you would normally send the data to your backend
+    console.log('Form submitted:', formData);
+
+    setIsLoading(false);
+    setIsOpen(false);
+    setFormData({ name: '', email: '', message: '' });
+
+    toast.success('Message sent successfully!', {
+      description: "We'll get back to you as soon as possible.",
+      duration: 5000,
+      style: {
+        background: 'linear-gradient(to right, rgb(34 197 94), rgb(22 163 74))',
+        color: 'white',
+      },
+    });
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  return (
+    <>
+      <motion.button
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        onClick={() => setIsOpen(true)}
+        className="ml-4 px-6 py-2 bg-gradient-to-r from-green-500 to-green-600 
+          text-white rounded-full text-sm font-medium hover:from-green-400 
+          hover:to-green-500 transition-all shadow-lg flex items-center gap-2"
+      >
+        Get Started
+        <ExternalLink className="w-4 h-4" />
+      </motion.button>
+
+      <Dialog open={isOpen} onOpenChange={setIsOpen}>
+        <DialogContent className="sm:max-w-md bg-gray-900 text-white border border-green-500/20">
+          <DialogHeader>
+            <DialogTitle className="text-xl font-bold bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
+              Let's Get Started
+            </DialogTitle>
+            <DialogDescription className="text-gray-400">
+              Tell us about your sustainability goals and we'll get back to you within 24 hours.
+            </DialogDescription>
+          </DialogHeader>
+
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div className="space-y-2">
+              <Label htmlFor="name" className="text-white">Name</Label>
+              <Input
+                id="name"
+                name="name"
+                required
+                placeholder="Your name"
+                value={formData.name}
+                onChange={handleChange}
+                className="bg-gray-800 border-green-500/20 focus:border-green-500 text-white"
+              />
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="email" className="text-white">Email</Label>
+              <Input
+                id="email"
+                name="email"
+                type="email"
+                required
+                placeholder="your@email.com"
+                value={formData.email}
+                onChange={handleChange}
+                className="bg-gray-800 border-green-500/20 focus:border-green-500 text-white"
+              />
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="message" className="text-white">Message</Label>
+              <Textarea
+                id="message"
+                name="message"
+                required
+                placeholder="Tell us about your project or goals..."
+                value={formData.message}
+                onChange={handleChange}
+                className="bg-gray-800 border-green-500/20 focus:border-green-500 text-white min-h-[100px]"
+              />
+            </div>
+
+            <Button
+              type="submit"
+              disabled={isLoading}
+              className="w-full bg-gradient-to-r from-green-500 to-green-600 
+                hover:from-green-400 hover:to-green-500 text-white rounded-full 
+                font-medium transition-all"
+            >
+              {isLoading ? (
+                <>
+                  <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                  Sending...
+                </>
+              ) : (
+                <>
+                  <Send className="w-4 h-4 mr-2" />
+                  Send Message
+                </>
+              )}
+            </Button>
+          </form>
+        </DialogContent>
+      </Dialog>
+    </>
+  );
+};
