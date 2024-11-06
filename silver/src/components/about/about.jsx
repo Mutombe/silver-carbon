@@ -1,72 +1,76 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { 
-  Globe, 
-  LeafyGreen, 
-  Users, 
-  ArrowRight, 
-  Target, 
-  Shield, 
+import React from "react";
+import { motion } from "framer-motion";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import {
+  Globe,
+  LeafyGreen,
+  Users,
+  ArrowRight,
+  Target,
+  Shield,
   Lightbulb,
   HandshakeIcon,
   Sprout,
   Award,
   TreePine,
   Rocket,
-  Building, Leaf,
-  Linkedin, 
-  Twitter, 
-  Mail, 
+  Building,
+  Leaf,
+  Linkedin,
+  Twitter,
+  Mail,
   Briefcase,
-  GraduationCap
-} from 'lucide-react';
+  GraduationCap,
+} from "lucide-react";
 
 const container = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2
-    }
-  }
+      staggerChildren: 0.2,
+    },
+  },
 };
 
 const itemVariant = {
   hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 }
+  show: { opacity: 1, y: 0 },
 };
 
 const LeadershipProfiles = () => {
   const leaders = [
     {
       name: "Owen Mutero",
-      role: "Managing Partner",
+      role: "Managing Director",
       image: "owen.jpeg",
-      bio: "Expert Leadership",
-      expertise: ["Carbon Markets", "Strategic Leadership", "Sustainable Finance"],
+      bio: "Emerges as a luminary in the financial realm with over two decades of mastery as an equities trader and stockbroker",
+      expertise: [
+        "Carbon Markets",
+        "Strategic Leadership",
+        "Sustainable Finance",
+      ],
       credentials: "",
       social: {
         linkedin: "#",
         twitter: "#",
-        email: "owen@silvercarbon.co.zw"
-      }
+        email: "owen@silvercarbon.co.zw",
+      },
     },
     {
       name: "Clara Sadomba",
-      role: "Managing Partner",
+      role: "Executive Director",
       image: "partner.jpg",
-      bio: "Expert Leadership",
+      bio: "Clara has over 26 years industry experience at operations, middle and executive managerial levels",
       expertise: ["Blockchain", "Environmental Tech", "Data Science"],
       credentials: "",
       social: {
         linkedin: "https://www.linkedin.com/in/clara-sadomba-68360428",
         twitter: "#",
-        email: "owen@silvercarbon.co.zw"
-      }
+        email: "owen@silvercarbon.co.zw",
+      },
     },
-
   ];
 
   return (
@@ -122,8 +126,10 @@ const LeadershipProfiles = () => {
 
               <h3 className="text-xl font-bold mb-2">{leader.name}</h3>
               <p className="text-green-400 font-medium mb-4">{leader.role}</p>
-              
-              <p className="text-gray-300 text-center text-sm mb-4">{leader.bio}</p>
+
+              <p className="text-gray-300 text-center text-sm mb-4">
+                {leader.bio}
+              </p>
 
               <div className="flex flex-wrap justify-center gap-2 mb-4">
                 {leader.expertise.map((skill) => (
@@ -138,10 +144,12 @@ const LeadershipProfiles = () => {
 
               <div className="flex items-center gap-2 mb-4">
                 <GraduationCap className="w-4 h-4 text-green-400" />
-                <span className="text-sm text-gray-300">{leader.credentials}</span>
+                <span className="text-sm text-gray-300">
+                  {leader.credentials}
+                </span>
               </div>
 
-              <motion.div 
+              <motion.div
                 className="flex gap-4 mt-auto"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -256,7 +264,29 @@ const About = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-3 max-w-3xl mx-auto text-xl text-gray-300"
           >
-            Silver Carbon is dedicated to driving sustainable change through innovative financial solutions and cutting-edge technology.
+            As the world marches towards a global net zero by 2050, Silver
+            Carbon wasborn out of the need to create value in the carbon credits
+            value chain from creation to retirement. Having observed the
+            informational asymmetries and fragmentations that exist between the
+            developing countries that represent the bulk of the potential supply
+            of carbon credits and the developed countries representing the bulk
+            of the current and potential demand.
+            <br></br>
+            <br></br>
+            Leading to a snail pace development of carbon projects in Africa due
+            to a lack of finance, technical expertise and the market for carbon
+            credits, on the other hand the developed world whist equipped with
+            the Finance, technical expertise and thirst for carbon credits lacks
+            the intricate knowledge to navigate the African landscape.
+            <br></br>
+            <br></br>
+            In that light, Silver Carbon in partnership with Traxys, seeks to
+            bridge the gap through carbon asset development, carbon finance and
+            carbon credits offtake service offerings. Traxys is a global
+            physical mineral commodities trading, financing, marketing and
+            sourcing company with a presence in twenty countries and four
+            continents and at the forefront of Environmental, Social And
+            Governance (ESG) good practices.
           </motion.p>
         </div>
 
@@ -278,32 +308,28 @@ const About = () => {
             title="Expert Leadership Team"
             description="Silver Carbon is steered by a team of industry pioneers with decades of experience in finance, technology, and environmental stewardship."
             link="/team"
-                  />
-                  
-              </div>
-              
-          </div>
-          <LeadershipProfiles />
+          />
+        </div>
+      </div>
+      <LeadershipProfiles />
     </div>
   );
 };
 
 export default About;
 
-
-
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6 }
+  transition: { duration: 0.6 },
 };
 
 const staggerContainer = {
   animate: {
     transition: {
-      staggerChildren: 0.2
-    }
-  }
+      staggerChildren: 0.2,
+    },
+  },
 };
 
 const Partnership = () => {
@@ -319,10 +345,12 @@ const Partnership = () => {
           <h1 className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-300 to-blue-300 mb-6">
             Partnership with Traxys
           </h1>
-          <p className="text-xl text-gray-300">Strengthening our market presence through strategic collaboration</p>
+          <p className="text-xl text-gray-300">
+            Strengthening our market presence through strategic collaboration
+          </p>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           variants={staggerContainer}
           initial="initial"
           animate="animate"
@@ -338,10 +366,22 @@ const Partnership = () => {
             </div>
             <ul className="space-y-4">
               {[
-                { icon: Globe, text: "Global market access and distribution networks" },
-                { icon: Shield, text: "Enhanced trading capabilities and risk management" },
-                { icon: Lightbulb, text: "Combined expertise in commodity markets" },
-                { icon: Rocket, text: "Stronger financial backing for project development" }
+                {
+                  icon: Globe,
+                  text: "Global market access and distribution networks",
+                },
+                {
+                  icon: Shield,
+                  text: "Enhanced trading capabilities and risk management",
+                },
+                {
+                  icon: Lightbulb,
+                  text: "Combined expertise in commodity markets",
+                },
+                {
+                  icon: Rocket,
+                  text: "Stronger financial backing for project development",
+                },
               ].map((item, index) => (
                 <motion.li
                   key={index}
@@ -365,10 +405,19 @@ const Partnership = () => {
             </div>
             <ul className="space-y-4">
               {[
-                { icon: Globe, text: "Scale our carbon credit initiatives globally" },
-                { icon: Shield, text: "Provide more robust financial solutions" },
+                {
+                  icon: Globe,
+                  text: "Scale our carbon credit initiatives globally",
+                },
+                {
+                  icon: Shield,
+                  text: "Provide more robust financial solutions",
+                },
                 { icon: Lightbulb, text: "Access new market opportunities" },
-                { icon: Rocket, text: "Enhance project development capabilities" }
+                {
+                  icon: Rocket,
+                  text: "Enhance project development capabilities",
+                },
               ].map((item, index) => (
                 <motion.li
                   key={index}
@@ -400,10 +449,12 @@ const Sustainability = () => {
           <h1 className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-300 to-blue-300 mb-6">
             Our Commitment to Sustainability
           </h1>
-          <p className="text-xl text-gray-300">Building a better future through environmental stewardship</p>
+          <p className="text-xl text-gray-300">
+            Building a better future through environmental stewardship
+          </p>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           variants={staggerContainer}
           initial="initial"
           animate="animate"
@@ -419,10 +470,19 @@ const Sustainability = () => {
             </div>
             <ul className="space-y-4">
               {[
-                { icon: TreePine, text: "Development of high-integrity carbon projects" },
+                {
+                  icon: TreePine,
+                  text: "Development of high-integrity carbon projects",
+                },
                 { icon: Sprout, text: "Support for biodiversity conservation" },
-                { icon: LeafyGreen, text: "Promotion of sustainable agriculture practices" },
-                { icon: Globe, text: "Investment in renewable energy initiatives" }
+                {
+                  icon: LeafyGreen,
+                  text: "Promotion of sustainable agriculture practices",
+                },
+                {
+                  icon: Globe,
+                  text: "Investment in renewable energy initiatives",
+                },
               ].map((item, index) => (
                 <motion.li
                   key={index}
@@ -442,14 +502,22 @@ const Sustainability = () => {
           >
             <div className="flex items-center mb-6">
               <Target className="w-8 h-8 text-green-400 mr-4" />
-              <h2 className="text-2xl font-bold">Sustainable Development Goals</h2>
+              <h2 className="text-2xl font-bold">
+                Sustainable Development Goals
+              </h2>
             </div>
             <ul className="space-y-4">
               {[
                 { icon: Globe, text: "Climate Action (SDG 13)" },
                 { icon: TreePine, text: "Life on Land (SDG 15)" },
-                { icon: HandshakeIcon, text: "Partnerships for the Goals (SDG 17)" },
-                { icon: Rocket, text: "Industry, Innovation and Infrastructure (SDG 9)" }
+                {
+                  icon: HandshakeIcon,
+                  text: "Partnerships for the Goals (SDG 17)",
+                },
+                {
+                  icon: Rocket,
+                  text: "Industry, Innovation and Infrastructure (SDG 9)",
+                },
               ].map((item, index) => (
                 <motion.li
                   key={index}
@@ -481,10 +549,12 @@ const Team = () => {
           <h1 className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-300 to-blue-300 mb-6">
             Expert Leadership Team
           </h1>
-          <p className="text-xl text-gray-300">Driven by experience, guided by vision</p>
+          <p className="text-xl text-gray-300">
+            Driven by experience, guided by vision
+          </p>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           variants={staggerContainer}
           initial="initial"
           animate="animate"
@@ -500,10 +570,13 @@ const Team = () => {
             </div>
             <ul className="space-y-4">
               {[
-                { icon: Globe, text: "Carbon markets and environmental finance" },
+                {
+                  icon: Globe,
+                  text: "Carbon markets and environmental finance",
+                },
                 { icon: Target, text: "Project development and management" },
                 { icon: Lightbulb, text: "Technology and innovation" },
-                { icon: LeafyGreen, text: "Sustainable development" }
+                { icon: LeafyGreen, text: "Sustainable development" },
               ].map((item, index) => (
                 <motion.li
                   key={index}
@@ -530,7 +603,7 @@ const Team = () => {
                 { icon: LeafyGreen, text: "Environmental stewardship" },
                 { icon: Lightbulb, text: "Innovation and excellence" },
                 { icon: Shield, text: "Transparency and integrity" },
-                { icon: HandshakeIcon, text: "Collaborative partnership" }
+                { icon: HandshakeIcon, text: "Collaborative partnership" },
               ].map((item, index) => (
                 <motion.li
                   key={index}

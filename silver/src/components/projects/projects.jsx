@@ -47,6 +47,14 @@ const Projects = () => {
           >
             Silver Carbon has been involved in a diverse range of successful carbon projects across Africa.
           </motion.p>
+          <motion.p
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mt-3 max-w-md mx-auto text-base text-gray-300 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl"
+          >
+            Desclaimer: The projects are still 
+          </motion.p>
         </div>
         <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {projects.map((project, index) => (
