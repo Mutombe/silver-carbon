@@ -5,6 +5,7 @@ import {
   PerspectiveCamera,
   Environment,
 } from "@react-three/drei";
+import { useNavigate } from "react-router-dom";
 import {
   motion,
   AnimatePresence,
@@ -109,9 +110,14 @@ const CarbonCycleAnimation = ({ scrollProgress }) => {
 // Enhanced ServiceCard with better hover effects
 const ServiceCard = ({ icon: Icon, title, description, link }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+      navigate(link);
+  };
 
     return (
-      <button onClick={() => window.open(link, "_blank")}>
+      <button onClick={handleClick}>
     <motion.div
       className="relative bg-white/95 backdrop-blur-xl p-8 rounded-2xl shadow-xl border border-green-100 overflow-hidden group"
       onHoverStart={() => setIsHovered(true)}
@@ -174,6 +180,8 @@ const StatsCard = ({ number, label }) => (
 );
 
 const Hero = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="relative h-full flex flex-col lg:flex-row items-center">
       {/* Left side: Hero content */}
@@ -191,7 +199,7 @@ const Hero = () => {
             </span>
           </h1>
           <p className="text-lg lg:text-xl text-gray-200 mb-12">
-            Orchestrating a symphony of sustainable finance, where each note
+          Orchestrating a siphon of carbon asset development and carbon finance, where each note
             resounds with the promise of a cleaner, more resilient world.
           </p>
 
@@ -199,7 +207,7 @@ const Hero = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => (window.location.href = "/services")}
+              onClick={() => navigate('/services')}
               className="px-6 py-3 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-full font-medium flex items-center hover:from-green-400 hover:to-green-500 transition-all shadow-lg"
             >
               Explore Our Services
@@ -208,7 +216,7 @@ const Hero = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => (window.location.href = "/about")}
+              onClick={() => navigate('/about')}
               className="px-6 py-3 border-2 border-green-400 text-green-400 rounded-full font-medium hover:bg-green-500/10 transition-colors backdrop-blur-sm shadow-lg"
             >
               Learn More

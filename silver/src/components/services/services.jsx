@@ -13,11 +13,19 @@ import {
   Bird,
   Factory,
   DollarSign,
-  Users,
   ChevronRight,
   CheckCircle2,
-  ExternalLink
+  ExternalLink,
+  Users,
+  FileText,
+  Handshake,
+  ClipboardCheck,
+  BadgeCheck,
+  ArrowRightCircle,
+  Banknote,
+  ShoppingCart
 } from 'lucide-react';
+
 
 const Services = () => {
   return (
@@ -117,8 +125,190 @@ const Services = () => {
 export default Services;
 
 
+const ProcessDiagram = () => {
+  return (
+    <div className="relative py-24 bg-white/5 backdrop-blur-lg">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-4xl font-bold text-white text-center mb-16"
+        >
+          Carbon Asset Development Process
+        </motion.h2>
+        
+        <div className="relative max-w-5xl mx-auto">
+          <svg className="w-full h-auto" viewBox="0 0 1000 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+            {/* Project Developer */}
+            <rect x="50" y="270" width="150" height="60" rx="8" fill="#065f46" />
+            <text x="125" y="300" textAnchor="middle" fill="white" className="text-sm">Project</text>
+            <text x="125" y="320" textAnchor="middle" fill="white" className="text-sm">developer</text>
 
-// Shared Components
+            {/* Stakeholders */}
+            <rect x="300" y="150" width="150" height="80" rx="8" fill="#065f46" />
+            <text x="375" y="180" textAnchor="middle" fill="white" className="text-sm">IPLCs, local</text>
+            <text x="375" y="200" textAnchor="middle" fill="white" className="text-sm">operators/suppliers</text>
+            <text x="375" y="220" textAnchor="middle" fill="white" className="text-sm">and government</text>
+
+            {/* PDD */}
+            <rect x="300" y="270" width="150" height="60" rx="8" fill="#065f46" />
+            <text x="375" y="300" textAnchor="middle" fill="white" className="text-sm">Project Design</text>
+            <text x="375" y="320" textAnchor="middle" fill="white" className="text-sm">Document (PDD)</text>
+
+            {/* VVBs */}
+            <rect x="300" y="370" width="150" height="60" rx="8" fill="#065f46" />
+            <text x="375" y="400" textAnchor="middle" fill="white" className="text-sm">Validation/verification</text>
+            <text x="375" y="420" textAnchor="middle" fill="white" className="text-sm">bodies (VVBs)</text>
+
+            {/* Carbon Standard */}
+            <rect x="550" y="270" width="150" height="60" rx="8" fill="#065f46" />
+            <text x="625" y="300" textAnchor="middle" fill="white" className="text-sm">Carbon</text>
+            <text x="625" y="320" textAnchor="middle" fill="white" className="text-sm">standard</text>
+
+            {/* Carbon Registry */}
+            <rect x="800" y="270" width="150" height="60" rx="8" fill="#065f46" />
+            <text x="875" y="300" textAnchor="middle" fill="white" className="text-sm">Carbon</text>
+            <text x="875" y="320" textAnchor="middle" fill="white" className="text-sm">registry</text>
+
+            {/* Arrows */}
+            <path d="M200 300 H280" stroke="#10b981" strokeWidth="2" markerEnd="url(#arrowhead)" />
+            <path d="M200 290 Q240 190 280 190" stroke="#10b981" strokeWidth="2" markerEnd="url(#arrowhead)" />
+            <path d="M200 310 Q240 400 280 400" stroke="#10b981" strokeWidth="2" markerEnd="url(#arrowhead)" />
+            <path d="M450 300 H530" stroke="#10b981" strokeWidth="2" markerEnd="url(#arrowhead)" />
+            <path d="M700 300 H780" stroke="#10b981" strokeWidth="2" markerEnd="url(#arrowhead)" />
+
+            {/* Arrow Definitions */}
+            <defs>
+              <marker
+                id="arrowhead"
+                markerWidth="10"
+                markerHeight="7"
+                refX="9"
+                refY="3.5"
+                orient="auto"
+              >
+                <polygon points="0 0, 10 3.5, 0 7" fill="#10b981" />
+              </marker>
+            </defs>
+
+            {/* Labels */}
+            <text x="240" y="280" fill="#10b981" className="text-xs">Engages with</text>
+            <text x="240" y="370" fill="#10b981" className="text-xs">Validates</text>
+            <text x="480" y="280" fill="#10b981" className="text-xs">Registers</text>
+            <text x="730" y="280" fill="#10b981" className="text-xs">Issues</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+
+const OfftakeDiagram = () => {
+  return (
+    <div className="relative py-24 bg-white/5 backdrop-blur-lg">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-4xl font-bold text-white text-center mb-16"
+        >
+          Carbon Credits Offtake Structure
+        </motion.h2>
+
+        <div className="relative max-w-5xl mx-auto">
+          <svg className="w-full h-auto" viewBox="0 0 1200 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+            {/* Center Box - Project Developer */}
+            <g transform="translate(450, 250)">
+              <rect width="300" height="100" rx="8" fill="#065f46" className="shadow-lg" />
+              <foreignObject x="20" y="20" width="40" height="40">
+                <Building2 className="w-10 h-10 text-green-200" />
+              </foreignObject>
+              <text x="150" y="45" textAnchor="middle" fill="white" className="text-lg font-semibold">
+                Project Developer
+              </text>
+              <text x="150" y="70" textAnchor="middle" fill="white" className="text-sm">
+                Carbon Project Owner
+              </text>
+            </g>
+
+            {/* Left Box - Financiers */}
+            <g transform="translate(100, 250)">
+              <rect width="250" height="100" rx="8" fill="#065f46" className="shadow-lg" />
+              <foreignObject x="20" y="20" width="40" height="40">
+                <Banknote className="w-10 h-10 text-green-200" />
+              </foreignObject>
+              <text x="125" y="45" textAnchor="middle" fill="white" className="text-lg font-semibold">
+                Financiers
+              </text>
+              <text x="125" y="70" textAnchor="middle" fill="white" className="text-sm">
+                Debt & Equity Providers
+              </text>
+            </g>
+
+            {/* Right Box - Carbon Buyer */}
+            <g transform="translate(850, 250)">
+              <rect width="250" height="100" rx="8" fill="#065f46" className="shadow-lg" />
+              <foreignObject x="20" y="20" width="40" height="40">
+                <ShoppingCart className="w-10 h-10 text-green-200" />
+              </foreignObject>
+              <text x="125" y="45" textAnchor="middle" fill="white" className="text-lg font-semibold">
+                Carbon Buyer
+              </text>
+              <text x="125" y="70" textAnchor="middle" fill="white" className="text-sm">
+                End User / Trader
+              </text>
+            </g>
+
+            {/* Curved Arrows and Labels */}
+            {/* Left to Center */}
+            <path d="M350 300 C400 220, 500 380, 450 300" stroke="#10b981" strokeWidth="2" markerEnd="url(#arrowhead)" />
+            <text x="425" y="250" textAnchor="middle" fill="#10b981" className="text-sm font-medium">
+              Project Finance
+            </text>
+
+            {/* Center to Right */}
+            <path d="M750 300 C800 220, 900 380, 850 300" stroke="#10b981" strokeWidth="2" markerEnd="url(#arrowhead)" />
+            <text x="825" y="250" textAnchor="middle" fill="#10b981" className="text-sm font-medium">
+              Carbon Credits
+            </text>
+
+            {/* Right to Center (Return) */}
+            <path d="M850 330 C800 410, 700 240, 750 330" stroke="#10b981" strokeWidth="2" markerEnd="url(#arrowhead)" />
+            <text x="775" y="380" textAnchor="middle" fill="#10b981" className="text-sm font-medium">
+              Payment
+            </text>
+
+            {/* Center to Left (Return) */}
+            <path d="M450 330 C400 410, 300 240, 350 330" stroke="#10b981" strokeWidth="2" markerEnd="url(#arrowhead)" />
+            <text x="375" y="380" textAnchor="middle" fill="#10b981" className="text-sm font-medium">
+              Return on Investment
+            </text>
+
+            {/* Arrow Definitions */}
+            <defs>
+              <marker
+                id="arrowhead"
+                markerWidth="10"
+                markerHeight="7"
+                refX="9"
+                refY="3.5"
+                orient="auto"
+              >
+                <polygon points="0 0, 10 3.5, 0 7" fill="#10b981" />
+              </marker>
+            </defs>
+          </svg>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const PageHeader = ({ title, description }) => (
   <div className="relative py-24">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -239,6 +429,8 @@ export const AssetDevelopment = () => {
           </div>
         </div>
       </div>
+
+      <ProcessDiagram />
 
       {/* Development Process */}
       <div className="relative py-24">
@@ -416,7 +608,7 @@ export const CarbonCreditsOfftake = () => {
               delay={0.4}
             />
           </div>
-        </div>
+        </div> <OfftakeDiagram />
       </div>
 
       {/* Call to Action */}

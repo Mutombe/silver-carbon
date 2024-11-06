@@ -46,7 +46,7 @@ const Logo = () => (
         <img
           src="/silver-logo.svg"
           alt="Leaf"
-          className="w-full max-w-md h-auto text-green-500"
+          className="w-full max-w-md h-auto text-green-500 text-white"
         />
       </motion.div>
     </div>

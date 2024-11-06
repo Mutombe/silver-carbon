@@ -43,55 +43,30 @@ const LeadershipProfiles = () => {
     {
       name: "Owen Mutero",
       role: "Managing Partner",
-      image: "user3.png",
-      bio: "20+ years of experience in environmental markets and sustainable finance",
+      image: "owen.jpeg",
+      bio: "Expert Leadership",
       expertise: ["Carbon Markets", "Strategic Leadership", "Sustainable Finance"],
-      credentials: "MBA from Harvard Business School",
+      credentials: "",
       social: {
         linkedin: "#",
         twitter: "#",
-        email: "sarah@example.com"
+        email: "owen@silvercarbon.co.zw"
       }
     },
     {
-      name: "Michael Chen",
+      name: "Clara Sadomba",
       role: "Managing Partner",
-      image: "user3.png",
-      bio: "Former tech lead at major environmental tech companies",
+      image: "partner.jpg",
+      bio: "Expert Leadership",
       expertise: ["Blockchain", "Environmental Tech", "Data Science"],
-      credentials: "Ph.D. in Computer Science",
+      credentials: "",
       social: {
-        linkedin: "#",
+        linkedin: "https://www.linkedin.com/in/clara-sadomba-68360428",
         twitter: "#",
-        email: "michael@example.com"
+        email: "owen@silvercarbon.co.zw"
       }
     },
-    {
-      name: "Elena Ramaoko",
-      role: "Head of Sustainability",
-      image: "user3.png",
-      bio: "Leading expert in climate change mitigation and adaptation strategies",
-      expertise: ["Climate Science", "ESG", "Project Development"],
-      credentials: "M.Sc. in Environmental Science",
-      social: {
-        linkedin: "#",
-        twitter: "#",
-        email: "elena@example.com"
-      }
-    },
-    {
-      name: "David Kumar",
-      role: "Chief Financial Officer",
-      image: "user3.png",
-      bio: "Specializes in green finance and sustainable investments",
-      expertise: ["Green Finance", "Risk Management", "Strategic Planning"],
-      credentials: "CFA, MBA in Finance",
-      social: {
-        linkedin: "#",
-        twitter: "#",
-        email: "david@example.com"
-      }
-    }
+
   ];
 
   return (
