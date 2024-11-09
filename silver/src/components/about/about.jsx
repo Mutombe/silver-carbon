@@ -66,9 +66,10 @@ const LeadershipProfiles = () => {
       expertise: ["Blockchain", "Environmental Tech", "Data Science"],
       credentials: "",
       achievements: [
-        "Engineer Sadomba is the current Vice Chairperson of the Zimbabwe Consolidated Diamond Company Board and also the Chairperson of the Zimbabwe Mining Industry Pension Fund (MIPF)",
-        "She is a member of various professional bodies such as Engineering Council of Zimbabwe",
-        "Expert advisor on sustainable development",
+        "Eng Clara  was with ZIMASCO, Zimbabwe's largest integrated ferrochrome producer, were she rose from operational , middle management to General Manager- Marketing",
+        "Chief Executive Officer, Silvergill logistics, an integrated logistics service provider specialising in the movement of bulk minerals and bulk commodites via rail.",
+        "Vice Chairperson Zimbabwe Consolidated Diamond Company Board",
+        "Chairperson Zimbabwe Mining Industry Pension Fund",
       ],
       yearsExperience: 26,
       vision: "Driving sustainable change through innovative technology and strategic partnerships",
