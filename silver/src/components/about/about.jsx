@@ -62,8 +62,8 @@ const LeadershipProfiles = () => {
       name: "Clara Sadomba",
       role: "Chief Executive Officer",
       image: "partner.jpg",
-      bio: "Clara has over 26 years industry experience at operations, middle and executive managerial levels",
-      expertise: ["Blockchain", "Environmental Tech", "Data Science"],
+      bio: "A distinguished Engineer with over 26yrs of Experience at operational, middle and executive managerial levels",
+      expertise: ["Mining", "Logistics", "Strategic leadership"],
       credentials: "",
       achievements: [
         "Eng Clara  was with ZIMASCO, Zimbabwe's largest integrated ferrochrome producer, were she rose from operational , middle management to General Manager- Marketing",
@@ -249,7 +249,7 @@ const LeadershipProfiles = () => {
                 <div className="bg-white/5 rounded-lg p-4">
                   <h3 className="text-lg font-semibold mb-2 flex items-center gap-2">
                     <Award className="w-5 h-5 text-green-400" />
-                    Past Experience 
+                    Experience 
                   </h3>
                   <ul className="list-none space-y-2">
                     {selectedLeader.achievements.map((achievement, index) => (
@@ -478,13 +478,14 @@ const Partnership = () => {
           <div className="flex justify-center items-center gap-8 mb-8">
             <img 
               src="/trax.png" 
-              alt="Your Company Logo" 
-              className="h-10 object-contain"
+              alt="Traxys" 
+              className="h-22 w-42"
             />
+            <Handshake className="w-8 h-8 text-green-400 mr-4" />
             <img 
               src="/silver-logo.svg" 
               alt="Traxys Logo" 
-              className="h-10 object-contain h-20 w-20"
+              className="object-contain h-40 w-40"
             />
           </div>
           <p className="text-xl text-gray-300">

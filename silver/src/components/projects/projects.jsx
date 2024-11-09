@@ -45,7 +45,7 @@ const Projects = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-3 max-w-md mx-auto text-base text-gray-300 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl"
           >
-            Silver Carbon has been involved in a diverse range of successful carbon projects across Africa.
+            Silver Carbon ongoing and future projects
           </motion.p>
           <motion.p
             initial={{ y: 20, opacity: 0 }}

@@ -122,7 +122,7 @@ const ProcessDiagram = () => {
     <div className="relative py-24 bg-white/5 backdrop-blur-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h3 className="text-2xl font-bold text-white text-center mb-8">
-          Asset Development Process
+          Carbon Asset Development Process
         </h3>
         <div className="flex justify-center">
           <img
@@ -343,14 +343,7 @@ export const AssetDevelopment = () => {
             <ProcessStep
               number="8"
               title="Issuance of verified emission reductions"
-              description="Once verified, the emission reductions that were confirmed in the verification phase can be issued ex-post as as verified emission reductions. They thus represent the emission savings that actually took place in the past period, which can be one to five years.
-The steps of monitoring, project verification and issuance of verified emission reductions are repeated regularly and are thus to be considered as a cycle. "
-              delay={0.6}
-            />
-                        <ProcessStep
-              number="9"
-              title="Retirement of verified emission reductions"
-              description="Once a verified emission reduction is used, it must be retired. This process is also reflected in the relevant registry. If the financing of a climate project is done via ClimatePartner, the verified emission reductions are bundled in a system certified by TÜV Austria and are then retired on a regular basis. This ensures that each verified emission reduction can no longer be sold and is only used once, thus preventing double counting."
+              description="Once verified the Carbon Credits that were confirmed in the verification phase can now be issued by the respective  registry"
               delay={0.6}
             />
           </div>
