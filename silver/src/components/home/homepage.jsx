@@ -237,7 +237,7 @@ const Hero = () => {
             className="w-full max-w-md"
           >
             {/* Replace with your actual logo */}
-            <div className=" backdrop-blur-xl p-6 rounded-2xl mt-40">
+            <div className=" backdrop-blur-xl p-6 rounded-2xl mt-40 mb-40">
               <img
                 src="/silver-logo.svg"
                 alt="Leaf"
