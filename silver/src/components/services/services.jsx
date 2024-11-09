@@ -13,17 +13,9 @@ import {
   Bird,
   Factory,
   DollarSign,
-  ChevronRight,
+
   CheckCircle2,
-  ExternalLink,
   Users,
-  FileText,
-  Handshake,
-  ClipboardCheck,
-  BadgeCheck,
-  ArrowRightCircle,
-  Banknote,
-  ShoppingCart
 } from 'lucide-react';
 
 
@@ -59,7 +51,7 @@ const Services = () => {
             <div className="px-6 py-8">
               <h3 className="text-lg font-medium text-gray-900">Carbon Asset Development</h3>
               <p className="mt-2 text-base text-gray-500">
-                Silver Carbon provides end-to-end support in the development of high-integrity carbon assets, from project design to carbon credits issuance.
+              Silver Carbon aims to develop carbon assets from project design to carbon credits issuance, covering a wide spectrum
               </p>
             </div>
             <div className="bg-gray-100 px-6 py-4">
@@ -81,7 +73,7 @@ const Services = () => {
             <div className="px-6 py-8">
               <h3 className="text-lg font-medium text-gray-900">Carbon Finance</h3>
               <p className="mt-2 text-base text-gray-500">
-                Silver Carbon offers innovative financing solutions to scale high-integrity carbon projects, including carbon streaming and offtake agreements.
+              Carbon streaming is the provision of financing for development of carbon projects in exchange for a stream of future cashflows from the project which is called a “stream” .
               </p>
             </div>
             <div className="bg-gray-100 px-6 py-4">
@@ -103,7 +95,7 @@ const Services = () => {
             <div className="px-6 py-8">
               <h3 className="text-lg font-medium text-gray-900">Carbon Credits Offtake</h3>
               <p className="mt-2 text-base text-gray-500">
-                Silver Carbon offers offtake agreements to provide carbon project developers with secure future revenue and access to international markets.
+              We enable third party carbon project developers to bring their projects to bankable feasibility stage coupled with the need to bring certainty with regards to demand for their and consequently future revenue.
               </p>
             </div>
             <div className="bg-gray-100 px-6 py-4">
@@ -129,180 +121,53 @@ const ProcessDiagram = () => {
   return (
     <div className="relative py-24 bg-white/5 backdrop-blur-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-4xl font-bold text-white text-center mb-16"
-        >
-          Carbon Asset Development Process
-        </motion.h2>
-        
-        <div className="relative max-w-5xl mx-auto">
-          <svg className="w-full h-auto" viewBox="0 0 1000 600" fill="none" xmlns="http://www.w3.org/2000/svg">
-            {/* Project Developer */}
-            <rect x="50" y="270" width="150" height="60" rx="8" fill="#065f46" />
-            <text x="125" y="300" textAnchor="middle" fill="white" className="text-sm">Project</text>
-            <text x="125" y="320" textAnchor="middle" fill="white" className="text-sm">developer</text>
-
-            {/* Stakeholders */}
-            <rect x="300" y="150" width="150" height="80" rx="8" fill="#065f46" />
-            <text x="375" y="180" textAnchor="middle" fill="white" className="text-sm">IPLCs, local</text>
-            <text x="375" y="200" textAnchor="middle" fill="white" className="text-sm">operators/suppliers</text>
-            <text x="375" y="220" textAnchor="middle" fill="white" className="text-sm">and government</text>
-
-            {/* PDD */}
-            <rect x="300" y="270" width="150" height="60" rx="8" fill="#065f46" />
-            <text x="375" y="300" textAnchor="middle" fill="white" className="text-sm">Project Design</text>
-            <text x="375" y="320" textAnchor="middle" fill="white" className="text-sm">Document (PDD)</text>
-
-            {/* VVBs */}
-            <rect x="300" y="370" width="150" height="60" rx="8" fill="#065f46" />
-            <text x="375" y="400" textAnchor="middle" fill="white" className="text-sm">Validation/verification</text>
-            <text x="375" y="420" textAnchor="middle" fill="white" className="text-sm">bodies (VVBs)</text>
-
-            {/* Carbon Standard */}
-            <rect x="550" y="270" width="150" height="60" rx="8" fill="#065f46" />
-            <text x="625" y="300" textAnchor="middle" fill="white" className="text-sm">Carbon</text>
-            <text x="625" y="320" textAnchor="middle" fill="white" className="text-sm">standard</text>
-
-            {/* Carbon Registry */}
-            <rect x="800" y="270" width="150" height="60" rx="8" fill="#065f46" />
-            <text x="875" y="300" textAnchor="middle" fill="white" className="text-sm">Carbon</text>
-            <text x="875" y="320" textAnchor="middle" fill="white" className="text-sm">registry</text>
-
-            {/* Arrows */}
-            <path d="M200 300 H280" stroke="#10b981" strokeWidth="2" markerEnd="url(#arrowhead)" />
-            <path d="M200 290 Q240 190 280 190" stroke="#10b981" strokeWidth="2" markerEnd="url(#arrowhead)" />
-            <path d="M200 310 Q240 400 280 400" stroke="#10b981" strokeWidth="2" markerEnd="url(#arrowhead)" />
-            <path d="M450 300 H530" stroke="#10b981" strokeWidth="2" markerEnd="url(#arrowhead)" />
-            <path d="M700 300 H780" stroke="#10b981" strokeWidth="2" markerEnd="url(#arrowhead)" />
-
-            {/* Arrow Definitions */}
-            <defs>
-              <marker
-                id="arrowhead"
-                markerWidth="10"
-                markerHeight="7"
-                refX="9"
-                refY="3.5"
-                orient="auto"
-              >
-                <polygon points="0 0, 10 3.5, 0 7" fill="#10b981" />
-              </marker>
-            </defs>
-
-            {/* Labels */}
-            <text x="240" y="280" fill="#10b981" className="text-xs">Engages with</text>
-            <text x="240" y="370" fill="#10b981" className="text-xs">Validates</text>
-            <text x="480" y="280" fill="#10b981" className="text-xs">Registers</text>
-            <text x="730" y="280" fill="#10b981" className="text-xs">Issues</text>
-          </svg>
+        <h3 className="text-2xl font-bold text-white text-center mb-8">
+          Asset Development Process
+        </h3>
+        <div className="flex justify-center">
+          <img
+            src="/asset.png"
+            alt="Asset Development Process"
+            className="w-full max-w-4xl h-auto object-contain rounded-lg shadow-lg"
+          />
         </div>
       </div>
     </div>
   );
 };
 
-
 const OfftakeDiagram = () => {
   return (
     <div className="relative py-24 bg-white/5 backdrop-blur-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-4xl font-bold text-white text-center mb-16"
-        >
-          Carbon Credits Offtake Structure
-        </motion.h2>
+        <h3 className="text-2xl font-bold text-white text-center mb-8">
+          Carbon Credits Offtake Process
+        </h3>
+        <div className="flex justify-center">
+          <img
+            src="/credits.png"
+            alt="Carbon Credits Offtake Process"
+            className="w-full max-w-4xl h-auto object-contain rounded-lg shadow-lg"
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
 
-        <div className="relative max-w-5xl mx-auto">
-          <svg className="w-full h-auto" viewBox="0 0 1200 600" fill="none" xmlns="http://www.w3.org/2000/svg">
-            {/* Center Box - Project Developer */}
-            <g transform="translate(450, 250)">
-              <rect width="300" height="100" rx="8" fill="#065f46" className="shadow-lg" />
-              <foreignObject x="20" y="20" width="40" height="40">
-                <Building2 className="w-10 h-10 text-green-200" />
-              </foreignObject>
-              <text x="150" y="45" textAnchor="middle" fill="white" className="text-lg font-semibold">
-                Project Developer
-              </text>
-              <text x="150" y="70" textAnchor="middle" fill="white" className="text-sm">
-                Carbon Project Owner
-              </text>
-            </g>
-
-            {/* Left Box - Financiers */}
-            <g transform="translate(100, 250)">
-              <rect width="250" height="100" rx="8" fill="#065f46" className="shadow-lg" />
-              <foreignObject x="20" y="20" width="40" height="40">
-                <Banknote className="w-10 h-10 text-green-200" />
-              </foreignObject>
-              <text x="125" y="45" textAnchor="middle" fill="white" className="text-lg font-semibold">
-                Financiers
-              </text>
-              <text x="125" y="70" textAnchor="middle" fill="white" className="text-sm">
-                Debt & Equity Providers
-              </text>
-            </g>
-
-            {/* Right Box - Carbon Buyer */}
-            <g transform="translate(850, 250)">
-              <rect width="250" height="100" rx="8" fill="#065f46" className="shadow-lg" />
-              <foreignObject x="20" y="20" width="40" height="40">
-                <ShoppingCart className="w-10 h-10 text-green-200" />
-              </foreignObject>
-              <text x="125" y="45" textAnchor="middle" fill="white" className="text-lg font-semibold">
-                Carbon Buyer
-              </text>
-              <text x="125" y="70" textAnchor="middle" fill="white" className="text-sm">
-                End User / Trader
-              </text>
-            </g>
-
-            {/* Curved Arrows and Labels */}
-            {/* Left to Center */}
-            <path d="M350 300 C400 220, 500 380, 450 300" stroke="#10b981" strokeWidth="2" markerEnd="url(#arrowhead)" />
-            <text x="425" y="250" textAnchor="middle" fill="#10b981" className="text-sm font-medium">
-              Project Finance
-            </text>
-
-            {/* Center to Right */}
-            <path d="M750 300 C800 220, 900 380, 850 300" stroke="#10b981" strokeWidth="2" markerEnd="url(#arrowhead)" />
-            <text x="825" y="250" textAnchor="middle" fill="#10b981" className="text-sm font-medium">
-              Carbon Credits
-            </text>
-
-            {/* Right to Center (Return) */}
-            <path d="M850 330 C800 410, 700 240, 750 330" stroke="#10b981" strokeWidth="2" markerEnd="url(#arrowhead)" />
-            <text x="775" y="380" textAnchor="middle" fill="#10b981" className="text-sm font-medium">
-              Payment
-            </text>
-
-            {/* Center to Left (Return) */}
-            <path d="M450 330 C400 410, 300 240, 350 330" stroke="#10b981" strokeWidth="2" markerEnd="url(#arrowhead)" />
-            <text x="375" y="380" textAnchor="middle" fill="#10b981" className="text-sm font-medium">
-              Return on Investment
-            </text>
-
-            {/* Arrow Definitions */}
-            <defs>
-              <marker
-                id="arrowhead"
-                markerWidth="10"
-                markerHeight="7"
-                refX="9"
-                refY="3.5"
-                orient="auto"
-              >
-                <polygon points="0 0, 10 3.5, 0 7" fill="#10b981" />
-              </marker>
-            </defs>
-          </svg>
+const Stream = () => {
+  return (
+    <div className="relative py-24 bg-white/5 backdrop-blur-lg rounded-lg">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 rounded-lg">
+        <h3 className="text-2xl font-bold text-white text-center mb-8">
+          Carbon Projects Stream Financing
+        </h3>
+        <div className="flex justify-center">
+          <img
+            src="/stream.png"
+            alt="Carbon Projects Stream Financing"
+            className="w-full max-w-4xl h-auto object-contain rounded-lg shadow-lg"
+          />
         </div>
       </div>
     </div>
@@ -374,7 +239,7 @@ export const AssetDevelopment = () => {
     <div className="min-h-screen bg-gradient-to-b from-gray-900 via-green-900 to-gray-900">
       <PageHeader
         title="Carbon Asset Development"
-        description="From project design to carbon credits issuance, we develop high-integrity carbon assets across multiple sectors."
+        description="Silver Carbon aims to develop carbon assets from project design to carbon credits issuance, covering a spectrum including but not limited to the following;"
       />
 
       {/* Project Types */}
@@ -487,8 +352,8 @@ export const CarbonFinance = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 via-green-900 to-gray-900">
       <PageHeader
-        title="Carbon Finance"
-        description="Innovative stream financing solutions to scale high-integrity carbon credits projects and accelerate global climate action."
+        title="Carbon Projects Stream Financing"
+        description="Carbon streaming is the provision of financing for development of carbon projects in exchange for a stream of future cashflows from the project which is called a 'stream'"
       />
 
       {/* Stream Financing Overview */}
@@ -504,15 +369,14 @@ export const CarbonFinance = () => {
             >
               <h2 className="text-4xl font-bold text-white">Stream Financing</h2>
               <p className="text-green-100 text-lg leading-relaxed">
-                Carbon streaming provides upfront financing for development of carbon projects in exchange for future carbon credit streams. This innovative approach enables project development while ensuring long-term value creation.
+              A carbon credit stream is a contractual agreement whereby Silver Carbon, as the stream purchaser, makes an upfront deposit (in the form of cash, shares or other consideration) to a project partner, in return for the right to purchase all or a portion of the future carbon credits generated by a project or an asset over the term of the agreement.
               </p>
+              <br></br>
               <ul className="space-y-4">
                 {[
-                  "Upfront deposit for project development",
-                  "Right to purchase future carbon credits",
-                  "Ongoing delivery payments",
-                  "Benefits flow back to local communities",
-                  "Alignment with UN Sustainable Development Goals"
+                  "The project partner may use the upfront deposit to fund the development, expansion or operation of a project or for general corporate purposes.",
+                  "Silver Carbon then receives the carbon credits from the project partner and typically pays an ongoing delivery payment, or purchase price per carbon credit, to the project partner when the carbon credits are sold.",
+                  "A portion of the purchase price flows back to the project and the local communities.",
                 ].map((item, index) => (
                   <motion.li
                     key={index}
@@ -528,38 +392,9 @@ export const CarbonFinance = () => {
                 ))}
               </ul>
             </motion.div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="bg-white/95 backdrop-blur-xl p-8 rounded-2xl shadow-xl"
-            >
-              <h3 className="text-2xl font-bold text-gray-800 mb-6">Key Benefits</h3>
-              <div className="space-y-4">
-                <div className="flex items-start gap-4">
-                  <DollarSign className="w-6 h-6 text-green-600 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-bold text-gray-800">Secure Finance</h4>
-                    <p className="text-gray-600">Better financing terms and access to capital</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <LineChart className="w-6 h-6 text-green-600 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-bold text-gray-800">Risk Management</h4>
-                    <p className="text-gray-600">Manage future price and revenue risk</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <Users className="w-6 h-6 text-green-600 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-bold text-gray-800">Community Impact</h4>
-                    <p className="text-gray-600">Support for local communities and stakeholders</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
+
+            <Stream />
+            
           </div>
         </div>
       </div>

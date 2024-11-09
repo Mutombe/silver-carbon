@@ -113,59 +113,59 @@ const ServiceCard = ({ icon: Icon, title, description, link }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-      navigate(link);
+    navigate(link);
   };
 
-    return (
-      <button onClick={handleClick}>
-    <motion.div
-      className="relative bg-white/95 backdrop-blur-xl p-8 rounded-2xl shadow-xl border border-green-100 overflow-hidden group"
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(false)}
-      whileHover={{ y: -8, scale: 1.02 }}
-      transition={{ duration: 0.4, ease: "easeOut" }}
-    >
+  return (
+    <button onClick={handleClick}>
       <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-green-500/5 via-blue-500/5 to-green-500/5"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{
-          opacity: isHovered ? 1 : 0,
-          scale: isHovered ? 1.1 : 0.8,
-        }}
-        transition={{ duration: 0.4 }}
-      />
-
-      <div className="relative z-10">
+        className="relative bg-white/95 backdrop-blur-xl p-8 rounded-2xl shadow-xl border border-green-100 overflow-hidden group"
+        onHoverStart={() => setIsHovered(true)}
+        onHoverEnd={() => setIsHovered(false)}
+        whileHover={{ y: -8, scale: 1.02 }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
+      >
         <motion.div
-          className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-green-100 to-green-200 rounded-2xl mb-6"
+          className="absolute inset-0 bg-gradient-to-r from-green-500/5 via-blue-500/5 to-green-500/5"
+          initial={{ opacity: 0, scale: 0.8 }}
           animate={{
-            rotate: isHovered ? 360 : 0,
-            scale: isHovered ? 1.1 : 1,
+            opacity: isHovered ? 1 : 0,
+            scale: isHovered ? 1.1 : 0.8,
           }}
-          transition={{ duration: 0.6 }}
-        >
-          <Icon className="w-8 h-8 text-green-600" />
-        </motion.div>
+          transition={{ duration: 0.4 }}
+        />
 
-        <h3 className="text-2xl font-bold mb-4 text-gray-800">{title}</h3>
-        <p className="text-gray-600 mb-6 leading-relaxed">{description}</p>
-
-        <motion.div
-          className="flex items-center text-green-600 font-medium"
-          animate={{ x: isHovered ? 8 : 0 }}
-          transition={{ duration: 0.3 }}
-        >
-          Learn More
+        <div className="relative z-10">
           <motion.div
-            animate={{ x: isHovered ? 4 : 0 }}
+            className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-green-100 to-green-200 rounded-2xl mb-6"
+            animate={{
+              rotate: isHovered ? 360 : 0,
+              scale: isHovered ? 1.1 : 1,
+            }}
+            transition={{ duration: 0.6 }}
+          >
+            <Icon className="w-8 h-8 text-green-600" />
+          </motion.div>
+
+          <h3 className="text-2xl font-bold mb-4 text-gray-800">{title}</h3>
+          <p className="text-gray-600 mb-6 leading-relaxed">{description}</p>
+
+          <motion.div
+            className="flex items-center text-green-600 font-medium"
+            animate={{ x: isHovered ? 8 : 0 }}
             transition={{ duration: 0.3 }}
           >
-            <ArrowRight className="ml-2 w-4 h-4" />
-          </motion.div>
-        </motion.div>
-      </div>
+            Learn More
+            <motion.div
+              animate={{ x: isHovered ? 4 : 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <ArrowRight className="ml-2 w-4 h-4" />
             </motion.div>
-        </button>
+          </motion.div>
+        </div>
+      </motion.div>
+    </button>
   );
 };
 
@@ -199,15 +199,16 @@ const Hero = () => {
             </span>
           </h1>
           <p className="text-lg lg:text-xl text-gray-200 mb-12">
-          Orchestrating a siphon of carbon asset development and carbon finance, where each note
-            resounds with the promise of a cleaner, more resilient world.
+            Orchestrating a siphon of carbon asset development and carbon
+            finance, where each note resounds with the promise of a cleaner,
+            more resilient world.
           </p>
 
           <div className="flex flex-wrap gap-4">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => navigate('/services')}
+              onClick={() => navigate("/services")}
               className="px-6 py-3 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-full font-medium flex items-center hover:from-green-400 hover:to-green-500 transition-all shadow-lg"
             >
               Explore Our Services
@@ -216,7 +217,7 @@ const Hero = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => navigate('/about')}
+              onClick={() => navigate("/about")}
               className="px-6 py-3 border-2 border-green-400 text-green-400 rounded-full font-medium hover:bg-green-500/10 transition-colors backdrop-blur-sm shadow-lg"
             >
               Learn More
@@ -225,9 +226,29 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      {/* Right side: 3D Animation */}
-      <div className="w-full lg:w-1/2 h-[50vh] lg:h-screen order-1 lg:order-2">
-        <div className="relative h-full w-full">
+      {/* Right side: Logo and 3D Animation in a column */}
+      <div className="w-full lg:w-1/2 h-[80vh] lg:h-screen order-1 lg:order-2 flex flex-col">
+        {/* Logo Section */}
+        <div className="h-1/3 w-full flex items-center justify-center p-8">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="w-full max-w-md"
+          >
+            {/* Replace with your actual logo */}
+            <div className=" backdrop-blur-xl p-6 rounded-2xl mt-40">
+              <img
+                src="/silver-logo.svg"
+                alt="Leaf"
+                className="w-full max-w-md h-auto text-green-500 text-white"
+              />
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Carbon Animation Section */}
+        <div className="h-2/3 w-full relative">
           <div className="absolute inset-0">
             <Canvas>
               <PerspectiveCamera makeDefault position={[0, 0, 10]} />
@@ -255,6 +276,7 @@ const Hero = () => {
 const Home = () => {
   const { scrollYProgress } = useScroll();
   const [scrollProgress, setScrollProgress] = useState(0);
+  const navigate = useNavigate()
 
   useEffect(() => {
     const unsubscribe = scrollYProgress.onChange(setScrollProgress);
@@ -284,32 +306,21 @@ const Home = () => {
             <ServiceCard
               icon={Trees}
               title="Carbon Asset Development"
-                          description="From project design to carbon credits issuance, covering forest carbon, biodiversity, agriculture, and more."
-                          link="/services/asset-development"
+              description="From project design to carbon credits issuance, covering forest carbon, biodiversity, agriculture, and more."
+              link="/services/asset-development"
             />
             <ServiceCard
               icon={LineChart}
               title="Carbon Finance"
-                          description="Innovative stream financing solutions to scale high-integrity carbon credits projects and accelerate global climate action."
-                          link="/services/finance"
+              description="Innovative stream financing solutions to scale high-integrity carbon credits projects and accelerate global climate action."
+              link="/services/finance"
             />
             <ServiceCard
               icon={Sprout}
               title="Carbon Credits Offtake"
-                          description="Enabling project developers to bring their projects to bankable feasibility with guaranteed future demand."
-                          link="/services/offtake"
+              description="Enabling project developers to bring their projects to bankable feasibility with guaranteed future demand."
+              link="/services/offtake"
             />
-          </div>
-        </div>
-      </div>
-
-      <div className="relative py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <StatsCard number="20+" label="Years Experience" />
-            <StatsCard number="50+" label="Projects Completed" />
-            <StatsCard number="100K+" label="Carbon Credits" />
-            <StatsCard number="30+" label="Global Partners" />
           </div>
         </div>
       </div>
@@ -330,7 +341,7 @@ const Home = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => (window.location.href = "/contact")}
+            onClick={() => (navigate('/contact'))}
             className="px-8 py-4 bg-white text-green-600 rounded-full font-medium hover:bg-green-50 transition-colors flex items-center mx-auto shadow-lg"
           >
             Contact Us

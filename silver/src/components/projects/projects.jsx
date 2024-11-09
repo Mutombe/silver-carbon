@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { color, motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -53,10 +53,10 @@ const Projects = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-3 max-w-md mx-auto text-base text-gray-300 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl"
           >
-            Desclaimer: The projects content is still being updated
+            Desclaimer: <strong style={{textEmphasisColor: "red", textDecoration: "underline"}}>The projects content is still being updated</strong>
           </motion.p>
         </div>
-        <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        {/*<div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {projects.map((project, index) => (
             <motion.div
               key={index}
@@ -81,7 +81,7 @@ const Projects = () => {
               </div>
             </motion.div>
           ))}
-        </div>
+        </div>*/}
       </div>
     </div>
   );

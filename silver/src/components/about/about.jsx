@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
@@ -7,7 +6,6 @@ import {
   LeafyGreen,
   Users,
   ArrowRight,
-  Target,
   Shield,
   Lightbulb,
   HandshakeIcon,
@@ -22,7 +20,20 @@ import {
   Mail,
   Briefcase,
   GraduationCap,
+  Calendar,
+  Target,
+  X,
 } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
+import { motion, AnimatePresence } from "framer-motion";
+
+
 
 const container = {
   hidden: { opacity: 0 },
@@ -40,7 +51,29 @@ const itemVariant = {
 };
 
 const LeadershipProfiles = () => {
+  const [selectedLeader, setSelectedLeader] = React.useState(null);
+
   const leaders = [
+    {
+      name: "Clara Sadomba",
+      role: "Chief Executive Officer",
+      image: "partner.jpg",
+      bio: "Clara has over 26 years industry experience at operations, middle and executive managerial levels",
+      expertise: ["Blockchain", "Environmental Tech", "Data Science"],
+      credentials: "",
+      achievements: [
+        "Engineer Sadomba is the current Vice Chairperson of the Zimbabwe Consolidated Diamond Company Board and also the Chairperson of the Zimbabwe Mining Industry Pension Fund (MIPF)",
+        "She is a member of various professional bodies such as Engineering Council of Zimbabwe",
+        "Expert advisor on sustainable development",
+      ],
+      yearsExperience: 26,
+      vision: "Driving sustainable change through innovative technology and strategic partnerships",
+      social: {
+        linkedin: "https://www.linkedin.com/in/clara-sadomba-68360428",
+        twitter: "#",
+        email: "owen@silvercarbon.co.zw",
+      },
+    },
     {
       name: "Owen Mutero",
       role: "Managing Director",
@@ -51,22 +84,16 @@ const LeadershipProfiles = () => {
         "Strategic Leadership",
         "Sustainable Finance",
       ],
+      achievements: [
+        "Owen was Managing Director and co-founder of Cratos Institutional then an Institutional Stockbroking and Derivatives Trading firm",
+        "Led multiple successful sustainable finance initiatives",
+        "Holds a Bcom(Hons) in Banking cum laude, from the National University Of Science and Technology (NUST) 2003.",
+      ],
+      yearsExperience: 20,
+      vision: "Building bridges between global carbon markets and African opportunities",
       credentials: "",
       social: {
         linkedin: "#",
-        twitter: "#",
-        email: "owen@silvercarbon.co.zw",
-      },
-    },
-    {
-      name: "Clara Sadomba",
-      role: "Executive Director",
-      image: "partner.jpg",
-      bio: "Clara has over 26 years industry experience at operations, middle and executive managerial levels",
-      expertise: ["Blockchain", "Environmental Tech", "Data Science"],
-      credentials: "",
-      social: {
-        linkedin: "https://www.linkedin.com/in/clara-sadomba-68360428",
         twitter: "#",
         email: "owen@silvercarbon.co.zw",
       },
@@ -101,7 +128,8 @@ const LeadershipProfiles = () => {
               key={leader.name}
               variants={itemVariant}
               whileHover={{ y: -10 }}
-              className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 flex flex-col items-center text-white hover:bg-white/15 transition-all duration-300"
+              onClick={() => setSelectedLeader(leader)}
+              className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 flex flex-col items-center text-white hover:bg-white/15 transition-all duration-300 cursor-pointer"
             >
               <motion.div
                 whileHover={{ scale: 1.05 }}
@@ -142,13 +170,6 @@ const LeadershipProfiles = () => {
                 ))}
               </div>
 
-              <div className="flex items-center gap-2 mb-4">
-                <GraduationCap className="w-4 h-4 text-green-400" />
-                <span className="text-sm text-gray-300">
-                  {leader.credentials}
-                </span>
-              </div>
-
               <motion.div
                 className="flex gap-4 mt-auto"
                 initial={{ opacity: 0 }}
@@ -159,6 +180,7 @@ const LeadershipProfiles = () => {
                   whileHover={{ scale: 1.2, color: "#0077B5" }}
                   href={leader.social.linkedin}
                   className="text-gray-400 hover:text-gray-300"
+                  onClick={(e) => e.stopPropagation()}
                 >
                   <Linkedin className="w-5 h-5" />
                 </motion.a>
@@ -166,6 +188,7 @@ const LeadershipProfiles = () => {
                   whileHover={{ scale: 1.2, color: "#1DA1F2" }}
                   href={leader.social.twitter}
                   className="text-gray-400 hover:text-gray-300"
+                  onClick={(e) => e.stopPropagation()}
                 >
                   <Twitter className="w-5 h-5" />
                 </motion.a>
@@ -173,6 +196,7 @@ const LeadershipProfiles = () => {
                   whileHover={{ scale: 1.2, color: "#4CAF50" }}
                   href={`mailto:${leader.social.email}`}
                   className="text-gray-400 hover:text-gray-300"
+                  onClick={(e) => e.stopPropagation()}
                 >
                   <Mail className="w-5 h-5" />
                 </motion.a>
@@ -180,10 +204,115 @@ const LeadershipProfiles = () => {
             </motion.div>
           ))}
         </motion.div>
+
+        <Dialog open={!!selectedLeader} onOpenChange={() => setSelectedLeader(null)}>
+          <DialogContent className="bg-gray-900 border-green-400/20 text-white max-w-2xl">
+            <DialogHeader>
+              <DialogTitle className="text-2xl font-bold flex items-center gap-4">
+                <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-green-400">
+                  <img
+                    src={selectedLeader?.image}
+                    alt={selectedLeader?.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div>
+                  <h2 className="text-green-400">{selectedLeader?.name}</h2>
+                  <p className="text-sm text-gray-400 font-normal">{selectedLeader?.role}</p>
+                </div>
+              </DialogTitle>
+            </DialogHeader>
+
+            {selectedLeader && (
+              <div className="space-y-6">
+                <div className="bg-white/5 rounded-lg p-4">
+                  <h3 className="text-lg font-semibold mb-2 flex items-center gap-2">
+                    <Users className="w-5 h-5 text-green-400" />
+                    Professional Background
+                  </h3>
+                  <p className="text-gray-300">{selectedLeader.bio}</p>
+                </div>
+
+                <div className="bg-white/5 rounded-lg p-4">
+                  <h3 className="text-lg font-semibold mb-2 flex items-center gap-2">
+                    <Target className="w-5 h-5 text-green-400" />
+                    Vision & Strategy
+                  </h3>
+                  <p className="text-gray-300">{selectedLeader.vision}</p>
+                </div>
+
+                <div className="bg-white/5 rounded-lg p-4">
+                  <h3 className="text-lg font-semibold mb-2 flex items-center gap-2">
+                    <Award className="w-5 h-5 text-green-400" />
+                    Key Achievements
+                  </h3>
+                  <ul className="list-none space-y-2">
+                    {selectedLeader.achievements.map((achievement, index) => (
+                      <li key={index} className="text-gray-300 flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 rounded-full bg-green-400" />
+                        {achievement}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="bg-white/5 rounded-lg p-4">
+                  <h3 className="text-lg font-semibold mb-2 flex items-center gap-2">
+                    <Briefcase className="w-5 h-5 text-green-400" />
+                    Areas of Expertise
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedLeader.expertise.map((skill) => (
+                      <span
+                        key={skill}
+                        className="bg-green-400/20 text-green-300 px-3 py-1 rounded-full text-sm"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="flex justify-between items-center pt-4 border-t border-gray-700">
+                  <div className="flex items-center gap-2">
+                    <Calendar className="w-5 h-5 text-green-400" />
+                    <span className="text-gray-300">
+                      {selectedLeader.yearsExperience}+ Years Experience
+                    </span>
+                  </div>
+                  <div className="flex gap-4">
+                    <motion.a
+                      whileHover={{ scale: 1.2, color: "#0077B5" }}
+                      href={selectedLeader.social.linkedin}
+                      className="text-gray-400 hover:text-gray-300"
+                    >
+                      <Linkedin className="w-5 h-5" />
+                    </motion.a>
+                    <motion.a
+                      whileHover={{ scale: 1.2, color: "#1DA1F2" }}
+                      href={selectedLeader.social.twitter}
+                      className="text-gray-400 hover:text-gray-300"
+                    >
+                      <Twitter className="w-5 h-5" />
+                    </motion.a>
+                    <motion.a
+                      whileHover={{ scale: 1.2, color: "#4CAF50" }}
+                      href={`mailto:${selectedLeader.social.email}`}
+                      className="text-gray-400 hover:text-gray-300"
+                    >
+                      <Mail className="w-5 h-5" />
+                    </motion.a>
+                  </div>
+                </div>
+              </div>
+            )}
+          </DialogContent>
+        </Dialog>
       </div>
     </div>
   );
 };
+
 
 const AboutCard = ({ icon: Icon, title, description, link }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -265,7 +394,7 @@ const About = () => {
             className="mt-3 max-w-3xl mx-auto text-xl text-gray-300"
           >
             As the world marches towards a global net zero by 2050, Silver
-            Carbon wasborn out of the need to create value in the carbon credits
+            Carbon was born out of the need to create value in the carbon credits
             value chain from creation to retirement. Having observed the
             informational asymmetries and fragmentations that exist between the
             developing countries that represent the bulk of the potential supply
