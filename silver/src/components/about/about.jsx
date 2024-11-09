@@ -23,6 +23,10 @@ import {
   Calendar,
   Target,
   X,
+  BadgeDollarSign, 
+  Cpu, 
+  BarChart3, 
+  Handshake
 } from "lucide-react";
 import {
   Dialog,
@@ -85,9 +89,9 @@ const LeadershipProfiles = () => {
         "Sustainable Finance",
       ],
       achievements: [
-        "Owen was Managing Director and co-founder of Cratos Institutional then an Institutional Stockbroking and Derivatives Trading firm",
-        "Led multiple successful sustainable finance initiatives",
-        "Holds a Bcom(Hons) in Banking cum laude, from the National University Of Science and Technology (NUST) 2003.",
+        "Managing Director and Co -founder of Cratos Institutional then an Institutional Stock Broking & Derivatives firm and a member of the Johannesburg Stock Exchange.",
+        "Co-founder and Executive director of Cratos Asset Management  which manages both Institutional and retail funds.",
+        "Project team leader in specialised finance Capital Market Division Investec Bank",
       ],
       yearsExperience: 20,
       vision: "Building bridges between global carbon markets and African opportunities",
@@ -121,7 +125,7 @@ const LeadershipProfiles = () => {
           variants={container}
           initial="hidden"
           animate="show"
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8"
         >
           {leaders.map((leader, index) => (
             <motion.div
@@ -244,7 +248,7 @@ const LeadershipProfiles = () => {
                 <div className="bg-white/5 rounded-lg p-4">
                   <h3 className="text-lg font-semibold mb-2 flex items-center gap-2">
                     <Award className="w-5 h-5 text-green-400" />
-                    Key Achievements
+                    Past Experience 
                   </h3>
                   <ul className="list-none space-y-2">
                     {selectedLeader.achievements.map((achievement, index) => (
@@ -423,7 +427,7 @@ const About = () => {
           <AboutCard
             icon={Building}
             title="Partnership with Traxys"
-            description="Silver Carbon has partnered with Traxys, a global leader in physical commodity trading and financing, to leverage their expertise and resources in the carbon market."
+            description="Silver Carbon has partnered with Traxys, a global leader in physical commodity trading and financing, leveraging on their expertise."
             link="/partnership"
           />
           <AboutCard
@@ -463,107 +467,75 @@ const staggerContainer = {
 
 const Partnership = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-green-900 to-gray-900 py-16 text-white">
+    <div className="min-h-screen bg-gray-900 py-16 text-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <h1 className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-300 to-blue-300 mb-6">
+        <div className="text-center mb-16">
+
+          <h1 className="text-5xl font-bold text-green-300 mb-6">
             Partnership with Traxys
           </h1>
+          <div className="flex justify-center items-center gap-8 mb-8">
+            <img 
+              src="/trax.png" 
+              alt="Your Company Logo" 
+              className="h-10 object-contain"
+            />
+            <img 
+              src="/silver-logo.svg" 
+              alt="Traxys Logo" 
+              className="h-10 object-contain h-20 w-20"
+            />
+          </div>
           <p className="text-xl text-gray-300">
             Strengthening our market presence through strategic collaboration
           </p>
-        </motion.div>
+        </div>
 
-        <motion.div
-          variants={staggerContainer}
-          initial="initial"
-          animate="animate"
-          className="grid md:grid-cols-2 gap-8"
-        >
-          <motion.div
-            variants={fadeInUp}
-            className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/15 transition-all duration-300"
-          >
+        <div className="">
+          <div className="bg-white/10 rounded-2xl p-8 hover:bg-white/20 transition-all duration-300">
             <div className="flex items-center mb-6">
-              <HandshakeIcon className="w-8 h-8 text-green-400 mr-4" />
+              <Handshake className="w-8 h-8 text-green-400 mr-4" />
               <h2 className="text-2xl font-bold">Strategic Alliance</h2>
             </div>
             <ul className="space-y-4">
               {[
                 {
+                  icon: BadgeDollarSign,
+                  text: "Financial backing for project development"
+                },
+                {
+                  icon: GraduationCap,
+                  text: "Project Development Expertise"
+                },
+                {
+                  icon: Cpu,
+                  text: "Project Development Technology"
+                },
+                {
+                  icon: BarChart3,
+                  text: "Combined expertise in commodity markets"
+                },
+                {
                   icon: Globe,
-                  text: "Global market access and distribution networks",
-                },
-                {
-                  icon: Shield,
-                  text: "Enhanced trading capabilities and risk management",
-                },
-                {
-                  icon: Lightbulb,
-                  text: "Combined expertise in commodity markets",
-                },
-                {
-                  icon: Rocket,
-                  text: "Stronger financial backing for project development",
-                },
+                  text: "Enhanced Access to global end buyers"
+                }
               ].map((item, index) => (
-                <motion.li
+                <li
                   key={index}
-                  variants={fadeInUp}
                   className="flex items-center space-x-3"
                 >
                   <item.icon className="w-5 h-5 text-green-400" />
                   <span>{item.text}</span>
-                </motion.li>
+                </li>
               ))}
             </ul>
-          </motion.div>
-
-          <motion.div
-            variants={fadeInUp}
-            className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/15 transition-all duration-300"
-          >
-            <div className="flex items-center mb-6">
-              <Target className="w-8 h-8 text-green-400 mr-4" />
-              <h2 className="text-2xl font-bold">Market Impact</h2>
-            </div>
-            <ul className="space-y-4">
-              {[
-                {
-                  icon: Globe,
-                  text: "Scale our carbon credit initiatives globally",
-                },
-                {
-                  icon: Shield,
-                  text: "Provide more robust financial solutions",
-                },
-                { icon: Lightbulb, text: "Access new market opportunities" },
-                {
-                  icon: Rocket,
-                  text: "Enhance project development capabilities",
-                },
-              ].map((item, index) => (
-                <motion.li
-                  key={index}
-                  variants={fadeInUp}
-                  className="flex items-center space-x-3"
-                >
-                  <item.icon className="w-5 h-5 text-green-400" />
-                  <span>{item.text}</span>
-                </motion.li>
-              ))}
-            </ul>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
     </div>
   );
 };
+
 
 const Sustainability = () => {
   return (
@@ -610,7 +582,7 @@ const Sustainability = () => {
                 },
                 {
                   icon: Globe,
-                  text: "Investment in renewable energy initiatives",
+                  text: "Investments in energy efficiency and renewable energy initiatives.",
                 },
               ].map((item, index) => (
                 <motion.li
@@ -668,7 +640,7 @@ const Sustainability = () => {
 const Team = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 via-green-900 to-gray-900 py-16 text-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -747,7 +719,9 @@ const Team = () => {
           </motion.div>
         </motion.div>
       </div>
+      <LeadershipProfiles />
     </div>
+    
   );
 };
 
