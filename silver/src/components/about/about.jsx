@@ -90,9 +90,8 @@ const LeadershipProfiles = () => {
         "Sustainable Finance",
       ],
       achievements: [
-        "Managing Director and Co -founder of Cratos Institutional then an Institutional Stock Broking & Derivatives firm and a member of the Johannesburg Stock Exchange.",
-        "Co-founder and Executive director of Cratos Asset Management  which manages both Institutional and retail funds.",
-        "Project team leader in specialised finance Capital Market Division Investec Bank",
+        "Project team leader in specialised finance,  Capital Markets Division, Investec Bank",
+        "Equity Analyst at Investec Bank, South Africa",
       ],
       yearsExperience: 20,
       vision: "Building bridges between global carbon markets and African opportunities",
@@ -238,13 +237,13 @@ const LeadershipProfiles = () => {
                   <p className="text-gray-300">{selectedLeader.bio}</p>
                 </div>
 
-                <div className="bg-white/5 rounded-lg p-4">
+                {/*<div className="bg-white/5 rounded-lg p-4">
                   <h3 className="text-lg font-semibold mb-2 flex items-center gap-2">
                     <Target className="w-5 h-5 text-green-400" />
                     Vision & Strategy
                   </h3>
                   <p className="text-gray-300">{selectedLeader.vision}</p>
-                </div>
+                </div>*/}
 
                 <div className="bg-white/5 rounded-lg p-4">
                   <h3 className="text-lg font-semibold mb-2 flex items-center gap-2">

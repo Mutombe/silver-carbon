@@ -342,7 +342,7 @@ export const AssetDevelopment = () => {
             />
             <ProcessStep
               number="8"
-              title="Issuance of verified emission reductions"
+              title="Issuance of  carbon credits"
               description="Once verified the Carbon Credits that were confirmed in the verification phase can now be issued by the respective  registry"
               delay={0.6}
             />

@@ -298,7 +298,7 @@ const Home = () => {
           >
             <h2 className="text-4xl font-bold text-white mb-4">Our Services</h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Bridging the gap between supply and demand in carbon markets
+              
             </p>
           </motion.div>
 
