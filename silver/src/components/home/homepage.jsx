@@ -298,7 +298,7 @@ const Home = () => {
           >
             <h2 className="text-4xl font-bold text-white mb-4">Our Services</h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              
+            Silver Carbon offers a comprehensive suite of services to help drive sustainable change.
             </p>
           </motion.div>
 

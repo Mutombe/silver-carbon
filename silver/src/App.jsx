@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import Home from './components/home/homepage';
 import About from './components/about/about';
 import Services from './components/services/services';
@@ -11,9 +11,21 @@ import { Partnership, Team, Sustainability } from './components/about/about';
 import { AssetDevelopment, CarbonFinance, CarbonCreditsOfftake } from './components/services/services';
 import { Toaster } from 'sonner';
 
+// Scroll to top component
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  
+  return null;
+};
+
 const App = () => {
   return (
     <Router>
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
