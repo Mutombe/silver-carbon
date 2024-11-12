@@ -95,7 +95,7 @@ const Services = () => {
             <div className="px-6 py-8">
               <h3 className="text-lg font-medium text-gray-900">Carbon Credits Offtake</h3>
               <p className="mt-2 text-base text-gray-500">
-              We enable third party carbon project developers to bring their projects to bankable feasibility stage coupled with the need to bring certainty with regards to demand for their and consequently future revenue.
+              We enable third party carbon project developers to bring their projects to bankable feasibility stage coupled with the need to bring certainty with regards to demand for their credits and consequently future revenue.
               </p>
             </div>
             <div className="bg-gray-100 px-6 py-4">
