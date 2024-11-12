@@ -62,7 +62,7 @@ const LeadershipProfiles = () => {
       name: "Owen Mutero",
       role: "Managing Director",
       image: "owen.jpeg",
-      bio: "Emerges as a luminary in the financial realm with over two decades of mastery as an Investment Banker, Equities Trader and Stockbroking professional.",
+      bio: "Emerges as a luminary in the financial realm with over two decades of mastery as an Investment Banker, Equities Trader and Stockbroking Executive.",
       expertise: [
         "Carbon Markets",
         "Strategic Leadership",
@@ -72,7 +72,6 @@ const LeadershipProfiles = () => {
         "Managing Director and Co -founder of Cratos Institutional then an Institutional Stock Broking & Derivatives firm and a member of the Johannesburg Stock Exchange.",
         "Co-founder and Executive director of Cratos Asset Management  which manages both Institutional and retail funds.",
         "Project team leader in specialised finance,  Capital Markets Division, Investec Bank",
-        "Equity Analyst at Investec Bank, South Africa",
       ],
       yearsExperience: 20,
       vision: "Building bridges between global carbon markets and African opportunities",
