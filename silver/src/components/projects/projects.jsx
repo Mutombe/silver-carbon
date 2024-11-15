@@ -75,7 +75,7 @@ const Projects = () => {
                   to="/projects"
                   className="text-green-600 font-medium hover:text-green-800 flex items-center"
                 >
-                  Learn More
+                  Learn More...
                   <ArrowRight className="ml-2 -mr-1 h-5 w-5" />
                 </Link>
               </div>
