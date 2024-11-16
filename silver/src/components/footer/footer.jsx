@@ -122,6 +122,11 @@ export const Footer = () => {
             <p className="text-base text-gray-400">
               &copy; {new Date().getFullYear()} Silver Carbon. All rights reserved.
             </p>
+            <p className="text-base text-gray-400">
+            Developed By <a href="https://zettabyte.co.zw" target="_blank" rel="noopener noreferrer">
+          <strong style={{textDecoration: "underline"}}>Zettabyte</strong>
+        </a>
+            </p>
           </div>
         </motion.div>
       </div>
