@@ -59,6 +59,27 @@ const LeadershipProfiles = () => {
 
   const leaders = [
     {
+      name: "Clara Sadomba",
+      role: "Chief Executive Officer",
+      image: "partner.jpg",
+      bio: "A distinguished Engineer with over 26yrs of Experience at operational, middle and executive managerial levels",
+      expertise: ["Mining", "Logistics", "Strategic leadership"],
+      credentials: "",
+      achievements: [
+        "Eng Clara  was with ZIMASCO, Zimbabwe's largest integrated ferrochrome producer, were she rose from operational , middle management to General Manager- Marketing",
+        "Chief Executive Officer, Silvergill logistics, an integrated logistics service provider specialising in the movement of bulk minerals and bulk commodites via rail.",
+        "Vice Chairperson Zimbabwe Consolidated Diamond Company Board",
+        "Chairperson Zimbabwe Mining Industry Pension Fund",
+      ],
+      yearsExperience: 26,
+      vision: "Driving sustainable change through innovative technology and strategic partnerships",
+      social: {
+        linkedin: "https://www.linkedin.com/in/clara-sadomba-68360428",
+        twitter: "#",
+        email: "owen@silvercarbon.co.zw",
+      },
+    },
+    {
       name: "Owen Mutero",
       role: "Managing Director",
       image: "owen.jpeg",
@@ -82,27 +103,7 @@ const LeadershipProfiles = () => {
         email: "owen@silvercarbon.co.zw",
       },
     },
-    {
-      name: "Clara Sadomba",
-      role: "Executive Director",
-      image: "partner.jpg",
-      bio: "A distinguished Engineer with over 26yrs of Experience at operational, middle and executive managerial levels",
-      expertise: ["Mining", "Logistics", "Strategic leadership"],
-      credentials: "",
-      achievements: [
-        "Eng Clara  was with ZIMASCO, Zimbabwe's largest integrated ferrochrome producer, were she rose from operational , middle management to General Manager- Marketing",
-        "Chief Executive Officer, Silvergill logistics, an integrated logistics service provider specialising in the movement of bulk minerals and bulk commodites via rail.",
-        "Vice Chairperson Zimbabwe Consolidated Diamond Company Board",
-        "Chairperson Zimbabwe Mining Industry Pension Fund",
-      ],
-      yearsExperience: 26,
-      vision: "Driving sustainable change through innovative technology and strategic partnerships",
-      social: {
-        linkedin: "https://www.linkedin.com/in/clara-sadomba-68360428",
-        twitter: "#",
-        email: "owen@silvercarbon.co.zw",
-      },
-    },
+    
   ];
 
   return (
