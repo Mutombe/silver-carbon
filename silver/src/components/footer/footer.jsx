@@ -58,7 +58,7 @@ export const Footer = () => {
             <div className="space-y-4">
               <div className="flex items-center gap-3 text-gray-400 hover:text-green-400 transition-colors">
                 <MapPin className="w-5 h-5" />
-                <span>7 KingsRow, Northgate, Borrowdale, Harare, Zimbabwe</span>
+                <span>NRZ Complex, Seke Road, Harare, Zimbabwe</span>
               </div>
               <div className="flex items-center gap-3 text-gray-400 hover:text-green-400 transition-colors">
                 <Phone className="w-5 h-5" />

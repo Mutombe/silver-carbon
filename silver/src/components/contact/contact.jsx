@@ -78,7 +78,7 @@ const Contact = () => {
               <div className="ml-4">
                 <h3 className="text-lg font-medium text-gray-900">Address</h3>
                 <p className="mt-1 text-base text-gray-500">
-                  7 KingsRow, Northgate, Borrowdale, Harare, Zimbabwe
+                  NRZ Complex, Seke Road, Harare, Zimbabwe
                 </p>
               </div>
             </div>
