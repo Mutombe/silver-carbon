@@ -417,11 +417,7 @@ const About = () => {
             <br></br>
             In that light, Silver Carbon seeks to
             bridge the gap through carbon asset development, carbon finance and
-            carbon credits offtake service offerings. Traxys is a global
-            physical mineral commodities trading, financing, marketing and
-            sourcing company with a presence in twenty countries and four
-            continents and at the forefront of Environmental, Social And
-            Governance (ESG) good practices.
+            carbon credits offtake service offerings. 
           </motion.p>
         </div>
 
