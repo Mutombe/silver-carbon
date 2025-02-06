@@ -415,7 +415,7 @@ const About = () => {
             the intricate knowledge to navigate the African landscape.
             <br></br>
             <br></br>
-            In that light, Silver Carbon in partnership with Traxys, seeks to
+            In that light, Silver Carbon seeks to
             bridge the gap through carbon asset development, carbon finance and
             carbon credits offtake service offerings. Traxys is a global
             physical mineral commodities trading, financing, marketing and
@@ -426,12 +426,12 @@ const About = () => {
         </div>
 
         <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          <AboutCard
+{/*          <AboutCard
             icon={Building}
             title="Partnership with Traxys"
             description="Silver Carbon has partnered with Traxys, a global leader in physical commodity trading and financing, leveraging on their expertise."
             link="/partnership"
-          />
+          />*/}
           <AboutCard
             icon={Leaf}
             title="Commitment to Sustainability"
