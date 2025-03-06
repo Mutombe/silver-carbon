@@ -1,9 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ExternalLink, Telescope } from "lucide-react";
+import { Menu, X, ExternalLink, Telescope, UserCircle, ShieldCheck } from "lucide-react";
 import { SearchDialog } from "../search/search";
 import { ContactModal } from "../contact/contact";
+import { useSelector, useDispatch } from "react-redux";
+import { initializeAuth } from "@/redux/slices/authSlice";
+import LoginModal from "../authmodals/login";
+import RegisterModal from "../authmodals/register";
+import LogoutButton from "../authmodals/logout";
 
 const NavLink = ({ to, children, isMobile = false }) => {
   const location = useLocation();
@@ -61,6 +66,12 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const location = useLocation();
+  const dispatch = useDispatch();
+  const { isAuthenticated, user, loading } = useSelector((state) => state.auth);
+  
+  useEffect(() => {
+    dispatch(initializeAuth());
+  }, [dispatch]);
 
   useEffect(() => {
     document.body.style.backgroundColor = "#111827";
@@ -78,6 +89,8 @@ const Navbar = () => {
   useEffect(() => {
     setIsOpen(false);
   }, [location]);
+
+  const isAdmin = user?.role === 'admin' || user?.isSuperuser;
 
   return (
     <>
@@ -101,7 +114,16 @@ const Navbar = () => {
                 <NavLink to="/services">Services</NavLink>
                 <NavLink to="/projects">Projects</NavLink>
                 <NavLink to="/contact">Contact</NavLink>
+                {isAdmin && (
+                  <NavLink to="/admin">
+                    <div className="flex items-center">
+                      <ShieldCheck className="mr-1 w-4 h-4" />
+                      Admin
+                    </div>
+                  </NavLink>
+                )}
               </div>
+              
               <div className="relative">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
@@ -117,16 +139,36 @@ const Navbar = () => {
                 />
               </div>
 
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="ml-4 px-6 py-2 bg-gradient-to-r from-green-500 to-green-600 
-                  text-white rounded-full text-sm font-medium hover:from-green-400 
-                  hover:to-green-500 transition-all shadow-lg flex items-center gap-2"
-              >
-                <ContactModal />
-                <ExternalLink className="w-4 h-4" />
-              </motion.button>
+              <div className="flex items-center gap-2">
+                {isAuthenticated ? (
+                  <>
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <Link to="/profile" className="px-4 py-2 text-white hover:text-green-400 transition-colors">
+                        <UserCircle className="w-5 h-5" />
+                      </Link>
+                    </motion.div>
+                    <LogoutButton />
+                  </>
+                ) : (
+                  <>
+                    <LoginModal />
+                    <RegisterModal />
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="ml-4 px-6 py-2 bg-gradient-to-r from-green-500 to-green-600 
+                        text-white rounded-full text-sm font-medium hover:from-green-400 
+                        hover:to-green-500 transition-all shadow-lg flex items-center gap-2"
+                    >
+                      <ContactModal />
+                      <ExternalLink className="w-4 h-4" />
+                    </motion.button>
+                  </>
+                )}
+              </div>
             </div>
 
             <motion.button
@@ -169,6 +211,15 @@ const Navbar = () => {
                 <NavLink to="/contact" isMobile>
                   Contact
                 </NavLink>
+                {isAdmin && (
+                  <NavLink to="/admin" isMobile>
+                    <div className="flex items-center">
+                      <ShieldCheck className="mr-1 w-4 h-4" />
+                      Admin
+                    </div>
+                  </NavLink>
+                )}
+                
                 <div className="relative">
                   <motion.button
                     whileHover={{ scale: 1.05 }}
@@ -184,17 +235,36 @@ const Navbar = () => {
                   />
                 </div>
 
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-full mt-4 px-4 py-3 bg-gradient-to-r from-green-500 to-green-600 
-                    text-white rounded-full text-lg font-medium hover:from-green-400 
-                    hover:to-green-500 transition-all shadow-lg flex items-center 
-                    justify-center gap-2"
-                >
-                  <ContactModal />
-                  <ExternalLink className="w-5 h-5" />
-                </motion.button>
+                {isAuthenticated ? (
+                  <>
+                    <NavLink to="/profile" isMobile>
+                      <div className="flex items-center">
+                        <UserCircle className="mr-1 w-5 h-5" />
+                        Profile
+                      </div>
+                    </NavLink>
+                    <div className="pt-2">
+                      <LogoutButton />
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="pt-2 flex flex-col gap-3">
+                      <LoginModal isMobile />
+                      <RegisterModal isMobile />
+                      <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="w-full px-6 py-2 bg-gradient-to-r from-green-500 to-green-600 
+                          text-white rounded-full text-lg font-medium hover:from-green-400 
+                          hover:to-green-500 transition-all shadow-lg flex items-center justify-center gap-2"
+                      >
+                        <ContactModal />
+                        <ExternalLink className="w-5 h-5" />
+                      </motion.button>
+                    </div>
+                  </>
+                )}
               </div>
             </motion.div>
           )}
