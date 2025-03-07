@@ -46,28 +46,6 @@ export const login = createAsyncThunk(
   }
 );
 
-export const register1 = createAsyncThunk(
-  "auth/register",
-  async (userData, { rejectWithValue }) => {
-    try {
-      const response = await api.post(`${BASE_URL}/register/`, userData,
-        {
-          withCredentials: true,
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          }
-        });
-      console.log("User Registration Data", userData)
-      console.log("Registration Response", response.data);
-      return response.data;
-      
-    } catch (error) {
-      return rejectWithValue(error.response.data || 'Registration failed');
-    }
-  }
-);
-
 export const register = createAsyncThunk(
   "auth/register",
   async (userData, { rejectWithValue }) => {
@@ -83,33 +61,6 @@ export const register = createAsyncThunk(
       return rejectWithValue(
         error.response?.data || { detail: 'Registration failed' }
       );
-    }
-  }
-);
-
-// Modified logout thunk
-export const logout1 = createAsyncThunk(
-  "auth/logout",
-  async (_, { rejectWithValue }) => {
-    try {
-      //const { tokens } = getState().auth;
-      const tokens = localStorage.getItem("tokens")
-      
-      await axios.post(
-        `${BASE_URL}/logout/`, 
-        { refresh_token: tokens.refresh },
-        {
-          headers: {
-            'Authorization': `Bearer ${tokens.access}`,
-            'Content-Type': 'application/json',
-          }
-        }
-      );
-      
-      localStorage.removeItem("tokens");
-      return null;
-    } catch (error) {
-      return rejectWithValue(error.response?.data || 'Logout failed');
     }
   }
 );

@@ -90,7 +90,7 @@ const Navbar = () => {
     setIsOpen(false);
   }, [location]);
 
-  const isAdmin = user?.role === 'admin' || user?.isSuperuser;
+  const isAdmin = user?.role === 'Admin' || user?.isSuperuser;
 
   return (
     <>

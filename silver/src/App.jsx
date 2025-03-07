@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import Home from './components/home/homepage';
+import EmailVerificationPage from './components/email_verify/email';
+import ProfileForm from './components/navbar/profile';
+import AdminPage from './components/home/admin';
 import About from './components/about/about';
 import Services from './components/services/services';
 import Projects from './components/projects/projects';
@@ -30,6 +33,9 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/email_verify" element={<EmailVerificationPage />} />
+        <Route path="/profile" element={<ProfileForm />} />
+        <Route path="/admin" element={<AdminPage />} />
         <Route path="/services" element={<Services />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />

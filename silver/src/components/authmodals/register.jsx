@@ -75,7 +75,7 @@ const RegisterModal = ({ isMobile = false }) => {
         .then(() => {
           setOpenModal(false);
           // After successful registration, redirect to login
-          navigate("/");
+          navigate("/email_verify");
         })
         .catch((err) => {
           console.error("Registration failed:", err);
