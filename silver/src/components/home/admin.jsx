@@ -199,7 +199,8 @@ const AdminPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { user: currentUser } = useSelector((state) => state.auth);
-  const { users, loading, error, filters } = useSelector((state) => state.adminUsers);
+    const { users, loading, error, filters } = useSelector((state) => state.users);
+    
   
   const [selectedUser, setSelectedUser] = useState(null);
   const [modalConfig, setModalConfig] = useState({

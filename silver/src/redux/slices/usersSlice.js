@@ -60,8 +60,8 @@ const initialState = {
   },
 };
 
-const adminUsersSlice = createSlice({
-  name: "adminUsers",
+const usersSlice = createSlice({
+  name: "users",
   initialState,
   reducers: {
     setFilter: (state, action) => {
@@ -127,5 +127,5 @@ const adminUsersSlice = createSlice({
   },
 });
 
-export const { setFilter, clearFilters, clearError } = adminUsersSlice.actions;
-export default adminUsersSlice.reducer;
+export const { setFilter, clearFilters, clearError } = usersSlice.actions;
+export default usersSlice.reducer;
