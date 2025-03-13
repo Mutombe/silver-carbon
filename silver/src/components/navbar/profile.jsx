@@ -18,6 +18,8 @@ const ProfileForm = () => {
   
   const [previewUrl, setPreviewUrl] = useState(null);
   const [success, setSuccess] = useState(false);
+  console.log("profileData", profileData);
+  console.log("formData", formData);
   
   useEffect(() => {
     dispatch(fetchProfile());

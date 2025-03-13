@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import api from "../../utils/api";
 import axios from "axios";
 
-const BASE_URL = "http://localhost:8000/api";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL_DEPLOY;
 
 // Async thunks
 
@@ -28,7 +28,7 @@ export const login = createAsyncThunk(
   "auth/login",
   async (credentials, { rejectWithValue }) => {
     try {
-      const response = await api.post(`/login/`, credentials, {
+      const response = await api.post(`api/login/`, credentials, {
         headers: {
           'Content-Type': 'application/json',
         }
@@ -50,7 +50,7 @@ export const register = createAsyncThunk(
   "auth/register",
   async (userData, { rejectWithValue }) => {
     try {
-      const response = await api.post(`/register/`, userData, {
+      const response = await api.post(`api/register/`, userData, {
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
@@ -59,6 +59,7 @@ export const register = createAsyncThunk(
       return response.data;
     } catch (error) {
       return rejectWithValue(
+        console.log(error),
         error.response?.data || { detail: 'Registration failed' }
       );
     }

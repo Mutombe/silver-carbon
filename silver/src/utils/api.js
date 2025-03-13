@@ -4,11 +4,11 @@ axios.defaults.xsrfCookieName = "csrftoken";
 axios.defaults.xsrfHeaderName = "X-CSRFToken";
 axios.defaults.withCredentials = true;
 
-//const isDevelopment = import.meta.env.MODE === "development";
-//const baseURL = isDevelopment ? import.meta.env.VITE_API_BASE_URL_LOCAL : import.meta.env.VITE_API_BASE_URL_DEPLOY;
+const isDevelopment = import.meta.env.MODE === "development";
+const baseURL = import.meta.env.VITE_API_BASE_URL_DEPLOY;
 
 const api = axios.create({
-  baseURL: 'http://localhost:8000/api',
+  baseURL: baseURL,
   withCredentials: true,
 });
 

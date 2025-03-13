@@ -78,6 +78,7 @@ const RegisterModal = ({ isMobile = false }) => {
           navigate("/email_verify");
         })
         .catch((err) => {
+          console.log(err);
           console.error("Registration failed:", err);
         });
     }
