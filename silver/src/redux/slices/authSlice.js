@@ -101,7 +101,7 @@ export const refreshToken = createAsyncThunk(
   "auth/refreshToken",
   async (refresh, { rejectWithValue }) => {
     try {
-      const response = await axios.post(`${BASE_URL}/token/refresh/`, {
+      const response = await axios.post(`${BASE_URL}api/token/refresh/`, {
         refresh,
       });
       const newTokens = { ...response.data };
