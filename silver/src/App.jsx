@@ -13,6 +13,7 @@ import Footer from './components/footer/footer';
 import { Partnership, Team, Sustainability } from './components/about/about';
 import { AssetDevelopment, CarbonFinance, CarbonCreditsOfftake } from './components/services/services';
 import { Toaster } from 'sonner';
+import VerifyEmailPage from './components/email_verify/verify_page';
 
 // Scroll to top component
 const ScrollToTop = () => {
@@ -34,6 +35,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/email_verify" element={<EmailVerificationPage />} />
+        <Route path="/email-verify" element={<VerifyEmailPage />} />
         <Route path="/profile" element={<ProfileForm />} />
         <Route path="/admin" element={<AdminPage />} />
         <Route path="/services" element={<Services />} />

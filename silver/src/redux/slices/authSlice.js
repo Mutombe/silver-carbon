@@ -78,7 +78,7 @@ export const logout = createAsyncThunk(
       }
 
       await axios.post(
-        `${BASE_URL}/logout/`, 
+        `${BASE_URL}/api/logout/`, 
         { refresh: tokens.refresh },  // Match backend expectation
         {
           headers: {
