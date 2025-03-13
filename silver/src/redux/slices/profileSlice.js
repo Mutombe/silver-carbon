@@ -6,7 +6,7 @@ export const fetchProfile = createAsyncThunk(
   "profile/fetchProfile",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await api.get("/profile/");
+      const response = await api.get("api/profile/");
       return response.data;
     } catch (error) {
       return rejectWithValue(
@@ -33,7 +33,7 @@ export const updateProfile = createAsyncThunk(
         formData.append("profile_picture", profileData.profile_picture);
       }
       
-      const response = await api.put("/profile/", formData, {
+      const response = await api.put("api/profile/", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

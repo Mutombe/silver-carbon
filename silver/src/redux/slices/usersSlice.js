@@ -11,7 +11,7 @@ export const fetchUsers = createAsyncThunk(
       if (params.role) queryParams.append("role", params.role);
       if (params.status) queryParams.append("status", params.status);
 
-      const response = await api.get(`/users/?${queryParams.toString()}`);
+      const response = await api.get(`api/users/?${queryParams.toString()}`);
       return response.data;
     } catch (error) {
       return rejectWithValue(
@@ -25,7 +25,7 @@ export const toggleUserActive = createAsyncThunk(
   "adminUsers/toggleUserActive",
   async (userId, { rejectWithValue }) => {
     try {
-      const response = await api.patch(`/users/${userId}/toggle_active/`);
+      const response = await api.patch(`api/users/${userId}/toggle_active/`);
       return { userId, isActive: response.data.is_active };
     } catch (error) {
       return rejectWithValue(
@@ -39,7 +39,7 @@ export const changeUserRole = createAsyncThunk(
   "adminUsers/changeUserRole",
   async ({ userId, role }, { rejectWithValue }) => {
     try {
-      const response = await api.patch(`/users/${userId}/change_role/`, { role });
+      const response = await api.patch(`api/users/${userId}/change_role/`, { role });
       return { userId, role: response.data.role };
     } catch (error) {
       return rejectWithValue(
