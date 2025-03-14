@@ -87,7 +87,7 @@ const LoginModal = ({ isMobile = false }) => {
         } flex items-center`}
       >
         <LogIn className="inline-block mr-2" size={isMobile ? 24 : 20} />
-        Log In
+        ZimREC Log In
       </motion.button>
       
       <Dialog

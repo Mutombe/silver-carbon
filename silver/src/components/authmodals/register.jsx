@@ -99,7 +99,7 @@ const RegisterModal = ({ isMobile = false }) => {
         } flex items-center`}
       >
         <UserPlus className="inline-block mr-2" size={isMobile ? 24 : 20} />
-        Register
+        ZimREC Register
       </motion.button>
       
       <Dialog
