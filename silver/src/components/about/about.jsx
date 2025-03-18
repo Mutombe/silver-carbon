@@ -60,7 +60,7 @@ const LeadershipProfiles = () => {
   const leaders = [
     {
       name: "Clara Sadomba",
-      role: "Chief Executive Officer",
+      role: "Chairperson",
       image: "partner.jpg",
       bio: "A distinguished Engineer with over 26yrs of Experience at operational, middle and executive managerial levels",
       expertise: ["Mining", "Logistics", "Strategic leadership"],
@@ -422,12 +422,12 @@ const About = () => {
         </div>
 
         <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-{/*          <AboutCard
+{         <AboutCard
             icon={Building}
             title="Partnership with Traxys"
             description="Silver Carbon has partnered with Traxys, a global leader in physical commodity trading and financing, leveraging on their expertise."
             link="/partnership"
-          />*/}
+          />}
           <AboutCard
             icon={Leaf}
             title="Commitment to Sustainability"
