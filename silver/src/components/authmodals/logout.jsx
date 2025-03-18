@@ -11,9 +11,13 @@ const LogoutButton = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
+    window.location.href = '/';
+    window.location.href = '/';
     dispatch(logout())
       .unwrap()
       .then(() => {
+        window.location.href = '/';
+        window.location.href = '/';
         navigate("/");
       })
       .catch((err) => {

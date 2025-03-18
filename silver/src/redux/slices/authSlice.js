@@ -97,7 +97,7 @@ export const logout = createAsyncThunk(
 );
 
 // Modified refresh token thunk
-export const refreshToken = createAsyncThunk(
+export const refreshToken1 = createAsyncThunk(
   "auth/refreshToken",
   async (refresh, { rejectWithValue }) => {
     try {
@@ -110,6 +110,26 @@ export const refreshToken = createAsyncThunk(
     } catch (error) {
       return rejectWithValue(error.response.data);
     }
+  }
+);
+
+// authSlice.js - Update refreshToken thunk
+export const refreshToken = createAsyncThunk(
+  "auth/refreshToken",
+  async (_, { rejectWithValue }) => {
+      try {
+          const tokens = JSON.parse(localStorage.getItem("tokens"));
+          const response = await axios.post(
+              `${BASE_URL}api/token/refresh/`,
+              { refresh: tokens?.refresh }
+          );
+          const newTokens = response.data;
+          localStorage.setItem("tokens", JSON.stringify(newTokens));
+          return newTokens;
+      } catch (error) {
+          localStorage.removeItem("tokens");
+          return rejectWithValue(error.response?.data);
+      }
   }
 );
 
@@ -145,9 +165,9 @@ const authSlice = createSlice({
         state.tokens = action.payload;
         state.user = {
           id: action.payload.user_id,
+          email: action.payload.email,
           role: action.payload.role,
-          patientId: action.payload.patient_id,
-          doctorId: action.payload.doctor_id,
+          // Add other user properties
         };
       })
       .addCase(login.rejected, (state, action) => {
