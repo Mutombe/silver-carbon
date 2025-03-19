@@ -150,7 +150,10 @@ const Navbar = () => {
                       <Link to="/profile" className="px-4 py-2 text-white hover:text-green-400 transition-colors">
                         <UserCircle className="w-5 h-5" />
                       </Link>
-                    </motion.div>
+ 
+                    </motion.div>                     <Link to="/devices" className="px-4 py-2 text-white hover:text-green-400 transition-colors">
+                        Devices
+                      </Link>
                     <LogoutButton />
                   </>
                 ) : (

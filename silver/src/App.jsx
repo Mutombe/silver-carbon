@@ -14,6 +14,8 @@ import { Partnership, Team, Sustainability } from './components/about/about';
 import { AssetDevelopment, CarbonFinance, CarbonCreditsOfftake } from './components/services/services';
 import { Toaster } from 'sonner';
 import VerifyEmailPage from './components/email_verify/verify_page';
+import DeviceForm from './components/devices/devices';
+import DevicesList from './components/devices/devicelist';
 
 // Scroll to top component
 const ScrollToTop = () => {
@@ -47,6 +49,9 @@ const App = () => {
         <Route path="/team" element={<Team />} /> <Route path="/partnership" element={<Partnership />} />
         <Route path="/sustainability" element={<Sustainability />} />
         <Route path="/team" element={<Team />} />
+        <Route path="/devices" element={<DevicesList />} />
+        <Route path="/devices/new" element={<DeviceForm />} />
+        <Route path="/devices/edit/:id" element={<DeviceForm />} />
       </Routes>
       <Footer />
       <Toaster />
