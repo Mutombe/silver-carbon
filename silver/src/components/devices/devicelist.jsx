@@ -105,7 +105,7 @@ const DevicesList = () => {
             whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                       onClick={()=> navigate('/devices/new')}
-            className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+            className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-green-400 to-blue-400 text-white rounded-md hover:bg-blue-700"
           >
             <Plus className="w-4 h-4 mr-2" />
             Add New Device
