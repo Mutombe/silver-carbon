@@ -248,6 +248,11 @@ const Navbar = () => {
                         Profile
                       </div>
                     </NavLink>
+                    <NavLink to="/devices" isMobile>
+                      <div className="flex items-center">
+                        Devices
+                      </div>
+                    </NavLink>
                     <div className="pt-2">
                       <LogoutButton />
                     </div>
