@@ -115,14 +115,6 @@ const Navbar = () => {
                 <NavLink to="/services">Services</NavLink>
                 <NavLink to="/projects">Projects</NavLink>
                 <NavLink to="/contact">Contact</NavLink>
-                {isAdmin && (
-                  <NavLink to="/admin">
-                    <div className="flex items-center">
-                      <ShieldCheck className="mr-1 w-4 h-4" />
-                      Admin
-                    </div>
-                  </NavLink>
-                )}
               </div>
               
               <div className="relative">
@@ -141,38 +133,6 @@ const Navbar = () => {
               </div>
 
               <div className="flex items-center gap-2">
-                {isAuthenticated ? (
-                  <>
-                    <motion.div
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <Link to="/profile" className="px-4 py-2 text-white hover:text-green-400 transition-colors">
-                        <UserCircle className="w-5 h-5" />
-                      </Link>
- 
-                    </motion.div>                     <Link to="/devices" className="px-4 py-2 text-white hover:text-green-400 transition-colors">
-                        Devices
-                      </Link>
-                    <LogoutButton />
-                  </>
-                ) : (
-                  <>
-                    <LoginModal />
-                    <RegisterModal />
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="ml-4 px-6 py-2 bg-gradient-to-r from-green-500 to-green-600 
-                        text-white rounded-full text-sm font-medium hover:from-green-400 
-                        hover:to-green-500 transition-all shadow-lg flex items-center gap-2"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                      <ContactModal />
-                      
-                    </motion.button>
-                  </>
-                )}
               </div>
             </div>
 
@@ -210,20 +170,9 @@ const Navbar = () => {
                 <NavLink to="/services" isMobile>
                   Services
                 </NavLink>
-                <NavLink to="/projects" isMobile>
-                  Projects
-                </NavLink>
                 <NavLink to="/contact" isMobile>
                   Contact
                 </NavLink>
-                {isAdmin && (
-                  <NavLink to="/admin" isMobile>
-                    <div className="flex items-center">
-                      <ShieldCheck className="mr-1 w-4 h-4" />
-                      Admin
-                    </div>
-                  </NavLink>
-                )}
                 
                 <div className="relative">
                   <motion.button
@@ -239,42 +188,6 @@ const Navbar = () => {
                     setIsOpen={setIsSearchOpen}
                   />
                 </div>
-
-                {isAuthenticated ? (
-                  <>
-                    <NavLink to="/profile" isMobile>
-                      <div className="flex items-center">
-                        <UserCircle className="mr-1 w-5 h-5" />
-                        Profile
-                      </div>
-                    </NavLink>
-                    <NavLink to="/devices" isMobile>
-                      <div className="flex items-center">
-                        Devices
-                      </div>
-                    </NavLink>
-                    <div className="pt-2">
-                      <LogoutButton />
-                    </div>
-                  </>
-                ) : (
-                  <>
-                    <div className="pt-2 flex flex-col gap-3">
-                      <LoginModal isMobile />
-                      <RegisterModal isMobile />
-                      <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="w-full px-6 py-2 bg-gradient-to-r from-green-500 to-green-600 
-                          text-white rounded-full text-lg font-medium hover:from-green-400 
-                          hover:to-green-500 transition-all shadow-lg flex items-center justify-center gap-2"
-                      >
-                        <ContactModal />
-                        <ExternalLink className="w-5 h-5" />
-                      </motion.button>
-                    </div>
-                  </>
-                )}
               </div>
             </motion.div>
           )}
