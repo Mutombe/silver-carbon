@@ -1,18 +1,34 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@layer base {
-  :root {
-    --radius: 0.5rem
-  }
+
+
+@theme {
+  /* 1. Define Brand Colors */
+  --color-silver-green: #4ade80;
+  --color-silver-blue: #38bdf8;
+  --color-silver-dark: #0f172a;
+  --color-silver-light: #f8fafc;
+  
+  --color-primary: #38bdf8;
+  --color-primary-accent: #4ade80;
+
+  /* 2. Define Fonts */
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Playfair Display', serif;
+
+  /* 3. Animations (Optional custom ones) */
+  --animate-spin-slow: spin 3s linear infinite;
 }
 
-@layer base {
-  html {
-    font-family: 'Inter', sans-serif;
-  }
-  
-  body {
-    @apply font-roboto;
-  }
+/* 4. Global Styles */
+:root {
+  font-family: var(--font-sans);
+  background-color: var(--color-silver-light);
+  color: var(--color-silver-dark);
+}
+
+/* Ensure smooth scrolling for the landing page */
+html {
+  scroll-behavior: smooth;
 }

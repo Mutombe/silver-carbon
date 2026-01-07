@@ -1,62 +1,124 @@
-import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
-import Home from './components/home/homepage';
-import EmailVerificationPage from './components/email_verify/email';
-import ProfileForm from './components/navbar/profile';
-import AdminPage from './components/home/admin';
-import About from './components/about/about';
-import Services from './components/services/services';
-import Projects from './components/projects/projects';
-import Contact from './components/contact/contact';
-import Navbar from './components/navbar/navbar';
-import Footer from './components/footer/footer';
-import { Partnership, Team, Sustainability } from './components/about/about';
-import { AssetDevelopment, CarbonFinance, CarbonCreditsOfftake } from './components/services/services';
-import { Toaster } from 'sonner';
-import VerifyEmailPage from './components/email_verify/verify_page';
-import DeviceForm from './components/devices/devices';
-import DevicesList from './components/devices/devicelist';
+import React from "react";
+import { HelmetProvider } from "react-helmet-async";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Toaster } from "sonner";
+import ScrollToTop from "./components/ScrollToTop"; // We will create this small utility
+import Layout from "./components/Layout";
 
-// Scroll to top component
-const ScrollToTop = () => {
-  const { pathname } = useLocation();
-  
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-  
-  return null;
-};
+// Main Pages
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Services from "./pages/Services"; // Main Hub
+import Projects from "./pages/Projects";
+import News from "./pages/News";
+import Contact from "./pages/Contact";
 
-const App = () => {
+// Service Subpages
+import AssetDevelopment from "./pages/AssetDevelopment";
+import CarbonFinance from "./pages/CarbonFinancing";
+import CarbonOfftake from "./pages/CarbonOfftake";
+
+function App() {
   return (
-    <Router>
-      <ScrollToTop />
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/email_verify" element={<EmailVerificationPage />} />
-        <Route path="/email-verify" element={<VerifyEmailPage />} />
-        <Route path="/profile" element={<ProfileForm />} />
-        <Route path="/admin" element={<AdminPage />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/services/asset-development" element={<AssetDevelopment />} />
-        <Route path="/services/finance" element={<CarbonFinance />} />
-        <Route path="/services/offtake" element={<CarbonCreditsOfftake />} />
-        <Route path="/team" element={<Team />} /> <Route path="/partnership" element={<Partnership />} />
-        <Route path="/sustainability" element={<Sustainability />} />
-        <Route path="/team" element={<Team />} />
-        <Route path="/devices" element={<DevicesList />} />
-        <Route path="/devices/new" element={<DeviceForm />} />
-        <Route path="/devices/edit/:id" element={<DeviceForm />} />
-      </Routes>
-      <Footer />
-      <Toaster />
-    </Router>
+    <HelmetProvider>
+      <Router>
+        <div className="pacaembu-font">
+          <style jsx>{`
+            /* Niveau Grotesk Font Face - Regular */
+
+            /* Pacaembu Font Faces */
+            @font-face {
+              font-family: "Pacaembu";
+              src: url("./fonts/Pacaembu-Thin-Trial.ttf") format("truetype");
+              font-weight: 100;
+              font-style: normal;
+              font-display: swap;
+            }
+
+            @font-face {
+              font-family: "Pacaembu";
+              src: url("./fonts/Pacaembu-Light-Trial.ttf") format("truetype");
+              font-weight: 300;
+              font-style: normal;
+              font-display: swap;
+            }
+
+            @font-face {
+              font-family: "Pacaembu";
+              src: url("./fonts/Pacaembu-Regular-Trial.ttf") format("truetype");
+              font-weight: 400;
+              font-style: normal;
+              font-display: swap;
+            }
+
+            @font-face {
+              font-family: "Pacaembu";
+              src: url("./fonts/Pacaembu-Medium-Trial.ttf") format("truetype");
+              font-weight: 500;
+              font-style: normal;
+              font-display: swap;
+            }
+
+            @font-face {
+              font-family: "Pacaembu";
+              src: url("./fonts/Pacaembu-Bold-Trial.ttf") format("truetype");
+              font-weight: 700;
+              font-style: normal;
+              font-display: swap;
+            }
+
+            @font-face {
+              font-family: "Pacaembu";
+              src: url("./fonts/Pacaembu-Black-Trial.ttf") format("truetype");
+              font-weight: 900;
+              font-style: normal;
+              font-display: swap;
+            }
+
+            @font-face {
+              font-family: "Pacaembu";
+              src: url("./fonts/Pacaembu-Ultra-Trial.ttf") format("truetype");
+              font-weight: 950;
+              font-style: normal;
+              font-display: swap;
+            }
+
+            .pacaembu-font {
+              font-family: "Pacaembu", "Inter", "Segoe UI", Tahoma, Geneva,
+                Verdana, sans-serif;
+            }
+          `}</style>
+          <ScrollToTop />
+          <Layout>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+
+              {/* Services Routing */}
+              <Route path="/services" element={<Services />} />
+              <Route
+                path="/services/asset-development"
+                element={<AssetDevelopment />}
+              />
+              <Route
+                path="/services/carbon-finance"
+                element={<CarbonFinance />}
+              />
+              <Route
+                path="/services/carbon-offtake"
+                element={<CarbonOfftake />}
+              />
+
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/news" element={<News />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </Layout>
+          <Toaster position="top-center" richColors />
+        </div>
+      </Router>
+    </HelmetProvider>
   );
-};
+}
 
 export default App;
