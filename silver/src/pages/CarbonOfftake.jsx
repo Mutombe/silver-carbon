@@ -45,6 +45,26 @@ export default function CarbonOfftake() {
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 font-display">The Mechanics of Agreement</h2>
             <p className="text-slate-600 max-w-2xl mx-auto">How we structure guarantees to ensure project success.</p>
           </motion.div>
+
+          {/* Technical Illustration */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl mx-auto mb-20"
+          >
+            <div className="bg-slate-50 rounded-3xl p-8 md:p-12 shadow-sm border border-slate-100">
+              <img 
+                src="/credits.png" 
+                alt="Mechanics of a carbon offtake agreement - showing three steps: Project Created (developer creates a project that reduces or removes carbon emissions), Agreement Drafted (buyer agrees to purchase specified volume over years), and Carbon Credits Delivered (credits received as outlined in agreement)"
+                className="w-full h-auto"
+              />
+            </div>
+            <p className="text-center text-sm text-slate-500 mt-6">
+              Figure: Mechanics of a carbon offtake agreement
+            </p>
+          </motion.div>
           
           {/* Steps Grid */}
           <div className="grid md:grid-cols-3 gap-8 relative mb-24">

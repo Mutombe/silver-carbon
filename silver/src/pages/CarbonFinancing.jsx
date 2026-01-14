@@ -77,6 +77,35 @@ export default function CarbonFinance() {
                 </motion.div>
             </div>
 
+            {/* Technical Illustration Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-20"
+            >
+              <div className="text-center mb-10">
+                <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3 font-display">
+                  Aligning Interests for Climate Action
+                </h2>
+                <p className="text-slate-600 max-w-2xl mx-auto">
+                  Our streaming model creates a virtuous cycle that benefits all stakeholders while advancing UN Sustainable Development Goals.
+                </p>
+              </div>
+
+              <div className="bg-white rounded-3xl p-8 md:p-12 shadow-lg border border-slate-100">
+                <img 
+                  src="/stream.png" 
+                  alt="Carbon streaming flow diagram showing how Silver Carbon connects Project Partners with Buyers of Carbon Credits through upfront deposits, delivery of credits, sales, purchases, and ongoing payments, with funds flowing back to local communities and supporting UN SDGs"
+                  className="w-full h-auto"
+                />
+              </div>
+
+              <p className="text-center text-sm text-slate-500 mt-6">
+                Figure: How carbon streaming aligns interests to accelerate climate action and advance UN SDGs
+              </p>
+            </motion.div>
+
             {/* Explanation Section */}
             <div className="bg-silver-dark text-white p-10 md:p-16 rounded-[2.5rem] relative overflow-hidden shadow-2xl">
                 <div className="absolute top-0 right-0 w-96 h-96 bg-silver-blue/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />

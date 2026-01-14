@@ -100,6 +100,49 @@ export default function AssetDevelopment() {
           </div>
         </div>
       </section>
+
+      {/* --- TECHNICAL ILLUSTRATION SECTION --- */}
+      <section className="py-20 bg-slate-50 pacaembu-font">
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 font-display">
+              Project Development Lifecycle
+            </h2>
+            <p className="text-slate-600 max-w-2xl mx-auto">
+              A comprehensive view of key activities throughout carbon project development, from inception to credit issuance.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="bg-white rounded-3xl p-8 md:p-12 shadow-lg border border-slate-100"
+          >
+            <img 
+              src="/asset.png" 
+              alt="Key activities throughout carbon project development - showing the flow from Project Developer through IPLCs and stakeholders, to PDD preparation, validation, registration, MRV evidence, and finally to Carbon Registry and Offtakers"
+              className="w-full h-auto"
+            />
+          </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="text-center text-sm text-slate-500 mt-6"
+          >
+            Figure: Key activities throughout carbon project development
+          </motion.p>
+        </div>
+      </section>
     </>
   );
 }
